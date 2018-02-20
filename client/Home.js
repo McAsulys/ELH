@@ -20,8 +20,25 @@ export default class Home extends React.Component {
                 <p> You can find in this website many cities with beautiful places, events (festivals, concerts and so on).
                     Please, join us, and you will have the possibilities to participate to this new social network. <br />
                     Enjoy!!
+
+                    <CityLaconic />
                 </p>
             </div>
         );
     }
+}
+
+class CityLaconic extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render(){
+    console.log(db);
+    return(
+      <div>
+        hello !
+      </div>
+    );
+  }
 }
