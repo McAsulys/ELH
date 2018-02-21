@@ -8,13 +8,11 @@ import 'react-images-uploader/font.css';
 import {HTTP_SERVER_PORT_IMAGES} from '../server/constants';
 
 
-class DisplayCity extends React.Component {
+class DisplayActivity extends React.Component {
     render() {
         return (
             <div>
-                <br/>
-                <img width="250" height="250" src={this.props.city.picture} />
-                <p><Link to={'/city/' + this.props.city._id}> {this.props.city.name}</Link></p>
+                <p>Lorem Ipsum</p>
             </div>
         );
     }
