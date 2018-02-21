@@ -9,6 +9,10 @@ var gilles = {
     _id: ObjectId(),
     email: "gilles@iut.fr"
 };
+var aaron = {
+    _id: ObjectId(),
+    email: "aaron@gmail.ie"
+};
 db.users.drop();
 db.users.insert([derek, gilles]);
 
@@ -85,14 +89,136 @@ var festival = {
     dateStart: new Date('2016-6-15'),
     dateEnd: new Date('2016-7-10')
 };
+
+
+var king_johns_castle = {
+    _id: ObjectId(),
+    name: "King John's Castle",
+    nature: "place",
+    editor: {
+        _id: aaron._id,
+        email: aaron.email
+    },
+    pictures: ["images/Carlingford/king_johns_castle.jpg"],
+    comments: [
+            
+    ],
+    likers: [
+        
+    ],
+    description: "",
+    url: "http://www.carlingford.ie/"
+};
+
+var taaffes_castle = {
+    _id: ObjectId(),
+    name: "Taaffe's Castle",
+    nature: "place",
+    editor: {
+        _id: aaron._id,
+        email: aaron.email
+    },
+    pictures: ["images/Carlingford/taaffes_castle.jpg"],
+    comments: [
+            
+    ],
+    likers: [
+        
+    ],
+    description: "",
+    url: "http://www.carlingford.ie/"
+};
+
+var proleek_dolmen = {
+    _id: ObjectId(),
+    name: "Proleek Dolmen",
+    nature: "place",
+    editor: {
+        _id: aaron._id,
+        email: aaron.email
+    },
+    pictures: ["images/Carlingford/proleek_dolmen.jpg"],
+    comments: [
+            
+    ],
+    likers: [
+        
+    ],
+    description: "",
+    url: "http://www.carlingford.ie/"
+};
+
+var oyster_festival = {
+    _id: ObjectId(),
+    name: "Oyster Festival",
+    nature: "event",
+    editor: {
+        _id: aaron._id,
+        email: aaron.email
+    },
+    pictures: ["/images/Carlingford/oyster_festival_01.jpg", "/images/Carlingford/oyster_festival_02.jpg"],
+    comments: [{
+        user: {
+            _id: aaron._id,
+            email: aaron.email
+        },
+        date: new Date("2018"),
+        text: "Nice place"
+    }, {
+        user: {
+            _id: gilles._id,
+            email: gilles.email
+        },
+        date: new Date("2015"),
+        text: "Bof!"
+    }],
+    likers: [],
+    description: "",
+    url: "http://www.carlingford.ie/",
+    dateStart: new Date('2016-6-15'),
+    dateEnd: new Date('2016-7-10')
+};
+
+var wawel_castle = {
+    _id: ObjectId(),
+    name: "Wawel Castle",
+    nature: "place",
+    editor: {
+        _id: aaron._id,
+        email: aaron.email
+    },
+    picture: ["/images/Krakow/wawel_castle_01.jpg"],
+    comments: [],
+    likers: [],
+    description: "Wawel Castle is a castle residency, which is situated in the center of Krakow. This castle was built for King Casimir III the Great. It consists of a few buildings that are situated around the main Italian-styled courtyard. This castle represents almost all European architectural styles, that is the reason why it belongs to UNESCO World Heritage Site as the part of historic entre of Krakow.",
+    url: "http://www.wawel.krakow.pl/en"
+};
+
+var pierogi_festival = {
+    _id: ObjectId(),
+    name: "Pierogi Festival",
+    nature: "event",
+    editor: {
+        _id: aaron._id,
+        email: aaron.email
+    },
+    picture: ["/images/Krakow/pierogi_festival_01.jpg"],
+    comments: [],
+    likers: [],
+    description: "Pierogi are the typical part of the Polish diet. These savories are variously filled with cheese or meat and available nearly everywhere. But the ones at the Pierogi Festival are the best of the best. This festival takes place on 15 th of August. Lots of tourists come there to taste the true traditionally cooked pierogi.",
+    url: "http://www.polandculinaryvacations.com/blog/culinary-cultural-events-in-poland-2013-calendar/",
+    dateStart: new Date('2018-8-11'),
+    dateEnd: new Date('2018-8-15')
+};
+
 db.activities.drop();
-db.activities.insert([granet, saintSauveur, festival]);
+db.activities.insert([granet, saintSauveur, festival, king_johns_castle, taaffes_castle, proleek_dolmen, oyster_festival, wawel_castle, pierogi_festival]);
 
 
 // **** cities
 var aix = {
     _id: ObjectId(),
-    name: 'Aix en Provence',
+    name: "Aix en Provence",
     coordinates: {
         long: "43.5263",
         lat: "5.4454"
@@ -130,5 +256,71 @@ var boulogne = {
     picture: '/images/Boulogne/centre.jpg',
     activities: []
 };
+
+var carlingford = {
+    _id: ObjectId(),
+    name: "Carlingford",
+    coordinates: {
+        long: "54.0469",
+        lat: "6.1902"
+    },
+    description: "",
+    picture: "/images/Carlingford/carlingford.jpg",
+    activities: [{
+        _id: king_johns_castle._id,
+        name: king_johns_castle.name,
+        nature: king_johns_castle.nature,
+        picture: king_johns_castle.pictures[0]
+    }, {
+        _id: taaffes_castle._id,
+        name: taaffes_castle.name,
+        nature: taaffes_castle.nature,
+        picture: taaffes_castle.pictures[0]
+    }, {
+        _id: proleek_dolmen._id,
+        name: proleek_dolmen.name,
+        nature: proleek_dolmen.nature,
+        picture: proleek_dolmen.pictures[0]
+    }, {
+        _id: oyster_festival._id,
+        name: oyster_festival.name,
+        nature: oyster_festival.nature,
+        picture: oyster_festival.pictures[0],
+        dateStart: oyster_festival.dateStart,
+        dateEnd: oyster_festival.dateEnd
+    }]
+};
+
+var krakow = {
+    _id: ObjectId(),
+    name: "Krakow",
+    coordinates: {
+        long: "50.0647",
+        lat: "19.9450"
+    },
+    description: "Krakow is a large, beautiful city in Poland that was " +
+     "founded during the 7th century. It is situated on the banks of Vistula River " +
+     "and is one of the oldest cities in Poland. After the German invasion " +
+     " at the start of World War II, it became the capital of the German " +
+     "General Government. After WWII, Krakow was returned to Poland and " +
+     "became the native city of first Slavic Pope ever. He was the first non " +
+     "Italian born Pope in 455 years. In 1978 UNESCO included the entire Old " +
+     "Town to the World Heritage List.",
+    picture: "/images/Krakow/krakow_01.jpg",
+    activities: [{
+        _id: wawel_castle._id,
+        name: wawel_castle.name,
+        nature: wawel_castle.nature,
+        picture: wawel_castle.picture
+    },{
+        _id: pierogi_festival._id,
+        name: pierogi_festival.name,
+        nature: pierogi_festival.nature,
+        picture: pierogi_festival.picture,
+        dateStart: pierogi_festival.dateStart,
+        dateEnd: pierogi_festival.dateEnd
+    }]
+};
+
 db.cities.drop();
-db.cities.insert([aix, boulogne]);
+db.cities.insert([aix, boulogne, carlingford, krakow]);
