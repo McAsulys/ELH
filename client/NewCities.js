@@ -7,9 +7,17 @@ import 'react-images-uploader/font.css';
 
 import {HTTP_SERVER_PORT_IMAGES} from '../server/constants';
 
-export default class NewCity {
+export default class NewCity extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {cities: [], name: "", lat: null, long: null};
+    this.loadData();
+  }
+  loadData() {
+      fetch('/cities')
+              .then(res => res.json())
+              .then(data => this.setState({cities: data}))
+              .catch(err => console.log(err));
   }
 
   addCity(e) {
@@ -19,7 +27,8 @@ export default class NewCity {
       const cityLongitude = this.state.long;
 
       fetch('/newCity', {
-          method: 'POST', headers: {'Content-Type': 'application/json'},
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({cityName, cityLatitude, cityLongitude})
       }).then(res => {
           if (res.ok) {
@@ -45,7 +54,7 @@ export default class NewCity {
       this.setState({long: e.target.value});
   }
 
-  
+
   render(){
 
     return(

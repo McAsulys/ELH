@@ -6,7 +6,75 @@
   font-family: "Main";
   src : url("fonts/Avenir Black.otf");
 }
-
+h3{
+  margin: 0;
+}
 body{
   font-family: "Main";
+}
+header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-height: 90px;
+}
+.logo{
+  width: 100px;
+  height: 90px;
+  margin-left: 10px;
+}
+.button{
+  text-decoration: underline;
+  color: Black;
+}
+.menu{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+  width: 400px;
+  align-items: flex-end;
+}
+.menu a{
+  color: grey;
+  text-decoration: none;
+}
+.menu a:hover{
+  text-decoration: underline;
+  text-decoration-color: orange;
+
+}
+.SearchBar{
+  border: 1px solid black;
+  width: 200px;
+}
+.leftside{
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  margin-right: 10px;
+}
+.Login{
+  font-size: 0.8em;
+  text-align: right;
+  justify-content: space-around;
+  padding: 0;
+  margin-bottom: 10px;
+}
+.loupe{
+  width: 25px;
+  height: 25px;
+  background-image: url("images/icons/search.png");
+  background-clip: border-box;
+  background-size: contain;
+
+  /*fixe buuton basic style*/
+  font-size: 0;
+  border: none;
+  background-color: white;
+}
+.search{
+  border: none;
+  color: lightgrey;
+  width: 80%;
 }

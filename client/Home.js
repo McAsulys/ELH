@@ -38,44 +38,44 @@ export default class Home extends React.Component {
         return (
             <div>
               <header>
-                <img class="logo" src="/*link of logo*/" />
-                <div class="menu">
+                <img className="logo" src="images/logo.png" />
+                <div className="menu">
                   <a href="/*Home*/">Home</a>
                   <a href="/*Countries*/">Countries</a>
                   <a href="/*contact*/">Countries</a>
                 </div>
-                <div>
-                  <div class="Login">
-                    /*if logged*/
-                    <h3>/*name of the user*/</h3>
-                    <a class="button" href="/*lougout link*/">Logout</a>
-                    /*if not logged*/
-                    <a class="button" href="/*login*/">Login</a><a class="button" href="/*signup*/">Signup</a>
+                <div className="leftside">
+                  <div className="Login">
+                    {/*if logged*/}
+                    <h3>McAsulys</h3>
+                    <a className="button" href="/*lougout link*/">Log out</a>
+                    {/*if not logged*/}
+                    {/*<a className="button" href="">Login</a><a className="button" href="">Signup</a>*/}
                   </div>
-                  <div class="SearchBar">
+                  <div className="SearchBar">
                     <form action="" method="GET">
-                      <input type="text" name="search" value="search"></input>
-                      <input type="submit"></input>
+                      <input className="search" type="text" name="search"></input>
+                      <input className="loupe" type="submit"></input>
                     </form>
                   </div>
                 </div>
               </header>
-              <div class="Banner">
-                <h1 class="banner_Title">Dicovering our shared history</h1>
-                <p class="scroll">Scroll down</p>
-                <img class="scroll_arrow" href="/*lien de l'image*/" />
+              <div className="Banner">
+                <h1 className="banner_Title">Dicovering our shared history</h1>
+                <p className="scroll">Scroll down</p>
+                <img className="scroll_arrow" href="/*lien de l'image*/" />
               </div>
-              <div class="Triptique">
-                <h1 class="Triptique_Title">Discover a road to castles</h1>
+              <div className="Triptique">
+                <h1 className="Triptique_Title">Discover a road to castles</h1>
                 {this.state.cities.map((c, i) => <DisplayCity city={c}/>)}
                 /*Cstles here*/
               </div>
-              <div class="Triptique">
-                <h1 class="Triptique_Title">What goes around ?</h1>
+              <div className="Triptique">
+                <h1 className="Triptique_Title">What goes around ?</h1>
                 /*city here*/
               </div>
-              <div class="Triptique">
-                <h1 class="Triptique_Title">What is planned ?</h1>
+              <div className="Triptique">
+                <h1 className="Triptique_Title">What is planned ?</h1>
                 /*activity here*/
               </div>
               <footer>

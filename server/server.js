@@ -46,6 +46,7 @@ app.post('/images', imagesUpload(
 ));
 
 app.post('/newCity', (req, res) => {
+  console.log("passed");
     const c = {
         name: req.body.cityName,
         picture : '/images/Aix/aix.jpg',
