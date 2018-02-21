@@ -1,3 +1,13 @@
+
+#city_display{
+    display:inline-block;
+}
+#city_row{
+    width:800px;
+    margin-bottom:100px;
+    margin-left:auto;
+    margin-right:auto;
+}
 @font-face {
   font-family: "Title";
   src : url("fonts/ROCK.TTF");
@@ -77,4 +87,5 @@ header{
   border: none;
   color: lightgrey;
   width: 80%;
+>>>>>>> 4064d5ad52245eef8371375c078c3e2dee6b4f4c
 }
