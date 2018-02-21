@@ -1,13 +1,3 @@
-
-#city_display{
-    display:inline-block;
-}
-#city_row{
-    width:800px;
-    margin-bottom:100px;
-    margin-left:auto;
-    margin-right:auto;
-}
 @font-face {
   font-family: "Title";
   src : url("fonts/ROCK.TTF");
@@ -102,7 +92,6 @@ header{
   border: none;
   color: lightgrey;
   width: 80%;
->>>>>>> 4064d5ad52245eef8371375c078c3e2dee6b4f4c
 }
 
 .Banner {
@@ -130,4 +119,27 @@ header{
 }
 .scroll_arrow{
   width: 100px;
+}
+
+.Triptique{
+
+}
+.Triptique_Title{
+  text-align: center;
+  font-family: "Title";
+  width: 100%;
+  background-color: #d9d9db;
+  margin: 0;
+  padding:1em 0 1em 0;
+}
+
+.city_display{
+  width: 33%;
+}
+#city_row{
+  display: flex;
+}
+.tryptique_image{
+  width: 100%;
+  height: 100%;
 }

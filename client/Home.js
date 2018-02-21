@@ -8,10 +8,19 @@ import 'react-images-uploader/font.css';
 import {HTTP_SERVER_PORT_IMAGES} from '../server/constants';
 
 class DisplayCity extends React.Component {
+
     render() {
+      const style = {
+        backgroundImage: "url("+this.props.a.picture+")"
+      };
+      console.log(this.props.a.picture);
         return (
-                <div id="city_display">
-                    <p><Link to={'/city/' + this.props.a._id}><img width="250" height="250" src={this.props.a.picture} /></Link></p>
+                <div className="city_display">
+                    <p>
+                      <Link to={'/city/' + this.props.a._id}>
+                        <div class="tryptique_image" style={style}></div>
+                      </Link>
+                    </p>
                     <p>{this.props.a.name}</p>
                 </div>
                 );
@@ -22,7 +31,7 @@ class DisplayCity extends React.Component {
 class DisplayActivity extends React.Component {
     render() {
         return (
-                <div id="city_display">
+                <div className="city_display">
                     <p><Link to={'/event/' + this.props.a._id}><img width="250" height="250" src={this.props.a.picture} /></Link></p>
                     <p>{this.props.a.name}</p>
                 </div>
@@ -56,29 +65,33 @@ export default class Home extends React.Component {
                 <div>
                     <header>
                         <img className="logo" src="images/logo.png" />
-                        <div className="menu">
-                            <a href="/*Home*/">Home</a>
-                            <a href="/*Countries*/">Countries</a>
-                            <a href="/*contact*/">Countries</a>
-                        </div>
-                        <div className="leftside">
-                            <div className="Login">
-                                <h3>McAsulys</h3>
-                                <a className="button" href="/*lougout link*/">Log out</a>
-                            </div>
-                            <div className="SearchBar">
-                                <form action="" method="GET">
-                                    <input className="search" type="text" name="search"></input>
-                                    <input className="loupe" type="submit"></input>
-                                </form>
-                            </div>
+                        <div className="container flex">
+                          <div className="menu">
+                              <a href="/">Home</a>
+                              <a href="/country">Countries</a>
+                              <a href="/contact">Countries</a>
+                          </div>
+                          <div className="leftside">
+                              <div className="Login">
+                                  <h3>McAsulys</h3>
+                                  <a className="button" href="/*lougout link*/">Log out</a>
+                              </div>
+                              <div className="SearchBar">
+                                  <form action="" method="GET">
+                                      <input className="search" type="text" name="search"></input>
+                                      <input className="loupe" type="submit"></input>
+                                  </form>
+                              </div>
+                          </div>
                         </div>
                     </header>
 
                     <div className="Banner">
-                        <h1 className="banner_Title">Dicovering our shared history</h1>
+                      <h1 className="banner_Title">Dicovering<br /> our shared history</h1>
+                      <div className="scroller">
                         <p className="scroll">Scroll down</p>
-                        <img className="scroll_arrow" href="/*lien de l'image*/" />
+                        <img className="scroll_arrow" src="../images/icons/scrolldown.png" />
+                      </div>
                     </div>
 
                     <div className="Triptique">
@@ -101,22 +114,6 @@ export default class Home extends React.Component {
                             {events}
                         </div>
                     </div>
-
-                    <h2>Insert a new city</h2>
-                    <form onSubmit={(e) => this.addCity(e)}>
-                        <input type="text" value={this.state.name} onChange={(e) => {
-                        this.handleNameChange(e)
-                }} placeholder="Name of the city" /> <br />
-                        <input type="number" value={this.state.lat} onChange={(e) => {
-                            this.handleLatChange(e)
-                }} placeholder="Latitude" /> <br />
-                        <input type="number" value={this.state.long} onChange={(e) => {
-                                this.handleLongChange(e)
-                }} placeholder="Longitude" /> <br />
-
-                        <input type="submit" value="Create" />
-                    </form>
-
                     <footer>
                         <div>
                             <a href="/*terms and conditions*/">Terms and conditions</a>
