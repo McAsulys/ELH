@@ -39,6 +39,16 @@ app.get('/cities/:id', (req, res) => {
             res.status(404).json({message: `No such city with id : ${req.params.id}`});
         });
 });
+
+app.get('/activity/:id', (req, res) => {
+    console.log("REQ ", req.params.id);
+    db.collection('activities').findOne({"_id": ObjectID(req.params.id)})
+        .then(activity => res.json(activity))
+        .catch(error => {
+            console.log(error);
+            res.status(404).json({message: `No such activity with id : ${req.params.id}`});
+        });
+});
      
 app.post('/images', imagesUpload(
     './static/' + IMAGES,
@@ -63,3 +73,24 @@ app.post('/newCity', (req, res) => {
             res.status(500).json({message: `Internal Server Error: ${error}`});
         });
 });
+
+app.post('/newActivity', (req, res) => {
+    const c = {
+        activity: req.body.activity,
+        description: req.body.description,
+        url : req.body.url,
+        coordinates: {
+            lat: req.body.cityLatitude,
+            long: req.body.cityLongitude
+        },
+        description: "",
+        activities: []
+    };
+    db.collection('cities').insertOne(c)
+        .then(result => res.json(result.insertedId))
+        .catch(error => {
+            console.log(error);
+            res.status(500).json({message: `Internal Server Error: ${error}`});
+        });
+});
+

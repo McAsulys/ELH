@@ -7,14 +7,23 @@ import 'react-images-uploader/font.css';
 
 import {HTTP_SERVER_PORT_IMAGES} from '../server/constants';
 
-
 class DisplayCity extends React.Component {
     render() {
         return (
-            <div>
-                <br/>
-                <img width="250" height="250" src={this.props.city.picture} />
-                <p><Link to={'/city/' + this.props.city._id}> {this.props.city.name}</Link></p>
+            <div id="city_display">
+                <p><Link to={'/city/' + this.props.a._id}><img width="250" height="250" src={this.props.a.picture} /></Link></p>
+                <p>{this.props.a.name}</p>
+            </div>
+        );
+    }
+};
+
+class DisplayActivity extends React.Component {
+    render() {
+        return (
+            <div id="city_display">
+                <p><Link to={'/event/' + this.props.a._id}><img width="250" height="250" src={this.props.a.picture} /></Link></p>
+                <p>{this.props.a.name}</p>
             </div>
         );
     }
@@ -68,6 +77,11 @@ export default class Home extends React.Component {
     }
 
     render() {
+        let cities_display = this.state.cities.slice(0, 3).map(c => {return <DisplayCity a={c} />});
+        let castles = ([].concat(...this.state.cities.slice(0,4).map(c => c.activities)).filter(a => a.nature === "castle")).map(c => <DisplayActivity a={c} />);
+        let events = ([].concat(...this.state.cities.slice(0,3).map(c => c.activities)).filter(a => a.nature === "event")).map(c => <DisplayActivity a={c} />);
+        
+        
         return (
             <div>
                 <h1>My Cities... The places to be!</h1>
@@ -76,7 +90,17 @@ export default class Home extends React.Component {
                     Enjoy!!
                 </p>
                 
-                {this.state.cities.map((c, i) => <DisplayCity city={c}/>)}
+                <div id="city_row">
+                    {cities_display}
+                </div>
+                
+                <div id="city_row">
+                    {castles}
+                </div>
+                
+                <div id="city_row">
+                    {events}
+                </div>
                 
                 <h2>Insert a new city</h2>
                 <form onSubmit={(e) => this.addCity(e)}>

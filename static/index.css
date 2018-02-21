@@ -33,4 +33,11 @@
 #mainimages{
     width:300px;
     height: 250px;
+}#city_display{
+    display:inline-block;
+}#city_row{
+    width:800px;
+    margin-bottom:100px;
+    margin-left:auto;
+    margin-right:auto;
 }

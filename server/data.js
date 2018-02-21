@@ -26,7 +26,7 @@ var granet = {
         _id: gilles._id,
         email: gilles.email
     },
-    pictures: ["/images/Aix/granet1.jpg", "/images/Aix/granet2.jpg"],
+    picture: ["/images/Aix/granet1.jpg", "/images/Aix/granet2.jpg"],
     comments: [{
         user: {
             _id: derek._id,
@@ -54,7 +54,7 @@ var saintSauveur = {
         _id: gilles._id,
         email: gilles.email
     },
-    pictures: ["/images/Aix/sauveur1.jpg", "/images/Aix/sauveur2.jpg"],
+    picture: ["/images/Aix/sauveur1.jpg", "/images/Aix/sauveur2.jpg"],
     comments: [{
         user: {
             _id: derek._id,
@@ -74,7 +74,7 @@ var festival = {
         _id: gilles._id,
         email: gilles.email
     },
-    pictures: ["/images/Aix/festival1.png", "/images/Aix/festival1.jpg", "/images/Aix/festival2.jpg"],
+    picture: ["/images/Aix/festival1.png", "/images/Aix/festival1.jpg", "/images/Aix/festival2.jpg"],
     comments: [{
         user: {
             _id: derek._id,
@@ -94,12 +94,12 @@ var festival = {
 var king_johns_castle = {
     _id: ObjectId(),
     name: "King John's Castle",
-    nature: "place",
+    nature: "castle",
     editor: {
         _id: aaron._id,
         email: aaron.email
     },
-    pictures: ["images/Carlingford/king_johns_castle.jpg"],
+    picture: ["images/Carlingford/king_johns_castle.jpg"],
     comments: [
             
     ],
@@ -118,7 +118,7 @@ var taaffes_castle = {
         _id: aaron._id,
         email: aaron.email
     },
-    pictures: ["images/Carlingford/taaffes_castle.jpg"],
+    picture: ["images/Carlingford/taaffes_castle.jpg"],
     comments: [
             
     ],
@@ -137,7 +137,7 @@ var proleek_dolmen = {
         _id: aaron._id,
         email: aaron.email
     },
-    pictures: ["images/Carlingford/proleek_dolmen.jpg"],
+    picture: ["images/Carlingford/proleek_dolmen.jpg"],
     comments: [
             
     ],
@@ -156,7 +156,7 @@ var oyster_festival = {
         _id: aaron._id,
         email: aaron.email
     },
-    pictures: ["/images/Carlingford/oyster_festival_01.jpg", "/images/Carlingford/oyster_festival_02.jpg"],
+    picture: ["/images/Carlingford/oyster_festival_01.jpg", "/images/Carlingford/oyster_festival_02.jpg"],
     comments: [{
         user: {
             _id: aaron._id,
@@ -182,7 +182,7 @@ var oyster_festival = {
 var wawel_castle = {
     _id: ObjectId(),
     name: "Wawel Castle",
-    nature: "place",
+    nature: "castle",
     editor: {
         _id: aaron._id,
         email: aaron.email
@@ -211,8 +211,40 @@ var pierogi_festival = {
     dateEnd: new Date('2018-8-15')
 };
 
+var fortress_of_carcassonne = {
+    _id: ObjectId(),
+    name: "Fortress of Carcassonne",
+    nature: "castle",
+    editor: {
+        _id: aaron._id,
+        email: aaron.email
+    },
+    picture: ["/images/Carcassonne/fortress_of_carcassonne_01.jpg"],
+    comments: [],
+    likers: [],
+    description: "Fortress of Carcassonne is a medieval citadel located near the French city called Carcassonne. It is located on a hill on the right bank of the river Aude. This citadel has 3 kilometer long double surrounding walls with 52 towers. This fortress is approximately 2500 years old and has been taken by Romans, Visigoths, Saracens and Crusaders. Each conqueror added its own modifications to the castle that is why the castle has so many fortifications.",
+    url: "http://www.carcassonne.org/",
+};
+
+var festival_de_carcassonne = {
+    _id: ObjectId(),
+    name: "Festival de Carcassonne",
+    nature: "event",
+    editor: {
+        _id: aaron._id,
+        email: aaron.email
+    },
+    picture: ["/images/Carcassonne/festival_de_carcassonne_01.jpg"],
+    comments: [],
+    likers: [],
+    description: "This festival starts in July and takes place in the Carcassonne fortress. It lasts for three weeks ant during this festival on the stage that is situated in the fortress the are dance, music and theatre performances. This festival is very popular among the tourists and French people.",
+    url: "http://www.festivaldecarcassonne.fr/",
+    dateStart: new Date('2018-7-15'),
+    dateEnd: new Date('2018-8-31')
+};
+
 db.activities.drop();
-db.activities.insert([granet, saintSauveur, festival, king_johns_castle, taaffes_castle, proleek_dolmen, oyster_festival, wawel_castle, pierogi_festival]);
+db.activities.insert([granet, saintSauveur, festival, king_johns_castle, taaffes_castle, proleek_dolmen, oyster_festival, wawel_castle, pierogi_festival, fortress_of_carcassonne, festival_de_carcassonne]);
 
 
 // **** cities
@@ -232,30 +264,31 @@ var aix = {
         _id: granet._id,
         name: granet.name,
         nature: granet.nature,
-        picture: granet.pictures[0]
+        picture: granet.picture[0]
     }, {
         _id: saintSauveur._id,
         name: saintSauveur.name,
         nature: saintSauveur.nature,
-        picture: saintSauveur.pictures[0]
+        picture: saintSauveur.picture[0]
     }, {
         _id: festival._id,
         name: festival.name,
         nature: festival.nature,
-        picture: festival.pictures[0]
+        picture: festival.picture[0]
     }]
 };
-var boulogne = {
-    _id: ObjectId(),
-    name: 'Boulogne sur mer',
-    coordinates: {
-        long: "50.7264",
-        lat: "1.6147"
-    },
-    description: "",
-    picture: '/images/Boulogne/centre.jpg',
-    activities: []
-};
+
+//var boulogne = {
+//    _id: ObjectId(),
+//    name: 'Boulogne sur mer',
+//    coordinates: {
+//        long: "50.7264",
+//        lat: "1.6147"
+//    },
+//    description: "",
+//    picture: '/images/Boulogne/centre.jpg',
+//    activities: []
+//};
 
 var carlingford = {
     _id: ObjectId(),
@@ -270,22 +303,22 @@ var carlingford = {
         _id: king_johns_castle._id,
         name: king_johns_castle.name,
         nature: king_johns_castle.nature,
-        picture: king_johns_castle.pictures[0]
+        picture: king_johns_castle.picture[0]
     }, {
         _id: taaffes_castle._id,
         name: taaffes_castle.name,
         nature: taaffes_castle.nature,
-        picture: taaffes_castle.pictures[0]
+        picture: taaffes_castle.picture[0]
     }, {
         _id: proleek_dolmen._id,
         name: proleek_dolmen.name,
         nature: proleek_dolmen.nature,
-        picture: proleek_dolmen.pictures[0]
+        picture: proleek_dolmen.picture[0]
     }, {
         _id: oyster_festival._id,
         name: oyster_festival.name,
         nature: oyster_festival.nature,
-        picture: oyster_festival.pictures[0],
+        picture: oyster_festival.picture[0],
         dateStart: oyster_festival.dateStart,
         dateEnd: oyster_festival.dateEnd
     }]
@@ -322,5 +355,29 @@ var krakow = {
     }]
 };
 
+var carcassonne = {
+    _id: ObjectId(),
+    name: "Carcassonne",
+    coordinates: {
+        long: "43.2122",
+        lat: "2.3537"
+    },
+    description: "Carcassonne is a fortified town in France. The castle itself is inhabited since Neolithic period. Carcassonne is located between historic trade routes that link the Atlantic to Mediterranean sea, that is why it was very strategically important that is why it was always occupied by different medieval nations. The city Carcassonne is famous for the medieval fortress that was restored in 1853 and added to the UNESCO list of World Heritage Sites in 1997.",
+    picture: "/images/Carcassonne/carcassonne_01.jpg",
+    activities: [{
+        _id: fortress_of_carcassonne._id,
+        name: fortress_of_carcassonne.name,
+        nature: fortress_of_carcassonne.nature,
+        picture: fortress_of_carcassonne.picture
+    },{
+        _id: festival_de_carcassonne._id,
+        name: festival_de_carcassonne.name,
+        nature: festival_de_carcassonne.nature,
+        picture: festival_de_carcassonne.picture,
+        dateStart: festival_de_carcassonne.dateStart,
+        dateEnd: festival_de_carcassonne.dateEnd
+    }]
+};
+
 db.cities.drop();
-db.cities.insert([aix, boulogne, carlingford, krakow]);
+db.cities.insert([carlingford, krakow, carcassonne, aix]);
