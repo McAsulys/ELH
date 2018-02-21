@@ -7,7 +7,12 @@ import City from "./City.js";
 
 ReactDOM.render(
     <div>
-        <header>Navbar</header>
+        <nav>
+        <a href="index.html">Home</a>
+            <a href="https://www.google.com">Charts</a>
+            <a href="https://www.google.com">About</a>
+        </nav>
+
         <Router history={hashHistory}>
             <Route path="/" component={Home}/>
             <Route path="/city/:id" component={City} />

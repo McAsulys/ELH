@@ -20,12 +20,8 @@ MongoClient.connect('mongodb://' + SERVER)
     })
     .catch(error => console.log('ERROR:', error));
 
-app.use((req,res,next)=>{
-  console.log("ok");
-  next();
-})
+
 app.get('/cities', (req, res) => {
-    console.log("coucou");
     db.collection('cities').find().toArray() // Ask to the db object to find all cities
     .then(cities => res.json(cities))        // Transform in json and send them on the network
     .catch(error => {                        // Bad news : an error!
@@ -48,3 +44,22 @@ app.post('/images', imagesUpload(
     './static/' + IMAGES,
     HTTP_SERVER_PORT_IMAGES
 ));
+
+app.post('/newCity', (req, res) => {
+    const c = {
+        name: req.body.cityName,
+        picture : '/images/Aix/aix.jpg',
+        coordinates: {
+            lat: req.body.cityLatitude,
+            long: req.body.cityLongitude
+        },
+        description: "",
+        activities: []
+    };
+    db.collection('cities').insertOne(c)
+        .then(result => res.json(result.insertedId))
+        .catch(error => {
+            console.log(error);
+            res.status(500).json({message: `Internal Server Error: ${error}`});
+        });
+});
