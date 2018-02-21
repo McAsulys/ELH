@@ -40,6 +40,18 @@ app.get('/cities/:id', (req, res) => {
         });
 });
 
+
+app.get('/activity/:id', (req, res) => {
+    console.log("REQ ", req.params.id);
+    db.collection('activities').findOne({"_id": ObjectID(req.params.id)})
+        .then(activity => res.json(activity))
+        .catch(error => {
+            console.log(error);
+            res.status(404).json({message: `No such activity with id : ${req.params.id}`});
+        });
+});
+     
+
 app.post('/images', imagesUpload(
     './static/' + IMAGES,
     HTTP_SERVER_PORT_IMAGES

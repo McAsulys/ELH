@@ -12,9 +12,9 @@ let c = [{name: 'Aix-en-Provence', picture: '/images/Aix/aix.jpg'}, {name: 'Boul
 class Display extends React.Component {
     render () {
         return (
-            <div >
+            <div>
                 <img width="300" height="300" src={this.props.place.picture} />
-                <p><Link to={'/city/'+this.props.place._id}> {this.props.place.name}</Link></p>
+                <p><Link to={'/event/'+this.props.place._id}> {this.props.place.name}</Link></p>
             </div>
         );
     }
@@ -42,7 +42,7 @@ export default class City extends React.Component {
         const startDate = this.state.startDate;
         const endDate = this.state.endDate;
 
-        fetch('/newCity', {
+        fetch('/newActivity', {
             method: 'POST', headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({activity, description, url, startDate, endDate})
         }).then(res => {
@@ -89,7 +89,7 @@ export default class City extends React.Component {
                 <br />
                 
                 <h1>Places</h1>
-                {this.state.city.activities.filter(a =>a.nature=='place')
+                {this.state.city.activities.filter(a =>a.nature!='event')
                 .map(a => <Display place={a} />)}
                 
                 <h1>Events</h1>
