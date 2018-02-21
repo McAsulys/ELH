@@ -33,59 +33,63 @@ export default class Home extends React.Component {
                 .then(data => this.setState({cities: data}))
                 .catch(err => console.log(err));
     }
-    
-    addCity(e) {
-        e.preventDefault();
-        const cityName = this.state.name;
-        const cityLatitude = this.state.lat;
-        const cityLongitude = this.state.long;
-
-        fetch('/newCity', {
-            method: 'POST', headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({cityName, cityLatitude, cityLongitude})
-        }).then(res => {
-            if (res.ok) {
-                res.json().then(id => console.log("City added with id " + id));
-                this.loadData();
-            }
-            else
-                res.json().then(err => alert("Failed to add city: " + err.message));
-        }).catch(err => alert("Error in sending data to server: " + err.message));
-        
-        this.setState({name: "", lat: null, long:null});
-    }
-    
-    handleNameChange(e) {
-        this.setState({name: e.target.value});
-    }
-    
-    handleLatChange(e) {
-        this.setState({lat: e.target.value});
-    }
-    
-    handleLongChange(e) {
-        this.setState({long: e.target.value});
-    }
 
     render() {
         return (
             <div>
-                <h1>My Cities... The places to be!</h1>
-                <p> You can find in this website many cities with beautiful places, events (festivals, concerts and so on).
-                    Please, join us, and you will have the possibilities to participate to this new social network. <br />
-                    Enjoy!!
-                </p>
-                
+              <header>
+                <img class="logo" src="/*link of logo*/" />
+                <div class="menu">
+                  <a href="/*Home*/">Home</a>
+                  <a href="/*Countries*/">Countries</a>
+                  <a href="/*contact*/">Countries</a>
+                </div>
+                <div>
+                  <div class="Login">
+                    /*if logged*/
+                    <h3>/*name of the user*/</h3>
+                    <a class="button" href="/*lougout link*/">Logout</a>
+                    /*if not logged*/
+                    <a class="button" href="/*login*/">Login</a><a class="button" href="/*signup*/">Signup</a>
+                  </div>
+                  <div class="SearchBar">
+                    <form action="" method="GET">
+                      <input type="text" name="search" value="search"></input>
+                      <input type="submit"></input>
+                    </form>
+                  </div>
+                </div>
+              </header>
+              <div class="Banner">
+                <h1 class="banner_Title">Dicovering our shared history</h1>
+                <p class="scroll">Scroll down</p>
+                <img class="scroll_arrow" href="/*lien de l'image*/" />
+              </div>
+              <div class="Triptique">
+                <h1 class="Triptique_Title">Discover a road to castles</h1>
                 {this.state.cities.map((c, i) => <DisplayCity city={c}/>)}
-                
-                <h2>Insert a new city</h2>
-                <form onSubmit={(e) => this.addCity(e)}>
-                    <input type="text" value={this.state.name} onChange={(e) => {this.handleNameChange(e)}} placeholder="Name of the city" /> <br />
-                    <input type="number" value={this.state.lat} onChange={(e) => {this.handleLatChange(e)}} placeholder="Latitude" /> <br />
-                    <input type="number" value={this.state.long} onChange={(e) => {this.handleLongChange(e)}} placeholder="Longitude" /> <br />
-                    
-                    <input type="submit" value="Create" />
-                </form>
+                /*Cstles here*/
+              </div>
+              <div class="Triptique">
+                <h1 class="Triptique_Title">What goes around ?</h1>
+                /*city here*/
+              </div>
+              <div class="Triptique">
+                <h1 class="Triptique_Title">What is planned ?</h1>
+                /*activity here*/
+              </div>
+              <footer>
+                <div>
+                  <a href="/*terms and conditions*/">Terms and conditions</a>
+                  <a href="/*site map*/">Site map</a>
+                  <a href="/*Contact us*/">Contact us</a>
+                </div>
+                <div>
+                  <a href="/*facebook*/"><img src="/*facebook*/" /></a>
+                  <a href="/*Twitter*/"><img src="/*Twitter*/" /></a>
+                  <a href="/*Insta*/"><img src="/*Insta*/" /></a>
+                </div>
+              </footer>
             </div>
         );
     }
