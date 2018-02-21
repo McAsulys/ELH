@@ -39,31 +39,35 @@ export default class Home extends React.Component {
             <div>
               <header>
                 <img className="logo" src="images/logo.png" />
-                <div className="menu">
-                  <a href="/*Home*/">Home</a>
-                  <a href="/*Countries*/">Countries</a>
-                  <a href="/*contact*/">Countries</a>
-                </div>
-                <div className="leftside">
-                  <div className="Login">
-                    {/*if logged*/}
-                    <h3>McAsulys</h3>
-                    <a className="button" href="/*lougout link*/">Log out</a>
-                    {/*if not logged*/}
-                    {/*<a className="button" href="">Login</a><a className="button" href="">Signup</a>*/}
+                <div className="container flex">
+                  <div className="menu">
+                    <a href="/*Home*/">Home</a>
+                    <a href="/*Countries*/">Countries</a>
+                    <a href="/*contact*/">Contact</a>
                   </div>
-                  <div className="SearchBar">
-                    <form action="" method="GET">
-                      <input className="search" type="text" name="search"></input>
-                      <input className="loupe" type="submit"></input>
-                    </form>
+                  <div className="leftside">
+                    <div className="Login">
+                      {/*if logged*/}
+                      <h3>McAsulys</h3>
+                      <a className="button" href="/*lougout link*/">Log out</a>
+                      {/*if not logged*/}
+                      {/*<a className="button" href="">Login</a><a className="button" href="">Signup</a>*/}
+                    </div>
+                    <div className="SearchBar">
+                      <form action="" method="GET">
+                        <input className="search" type="text" name="search"></input>
+                        <input className="loupe" type="submit"></input>
+                      </form>
+                    </div>
                   </div>
                 </div>
               </header>
               <div className="Banner">
-                <h1 className="banner_Title">Dicovering our shared history</h1>
-                <p className="scroll">Scroll down</p>
-                <img className="scroll_arrow" href="/*lien de l'image*/" />
+                <h1 className="banner_Title">Discovering<br />our shared history</h1>
+                <div className="scroller">
+                  <p className="scroll">Scroll down</p>
+                  <img className="scroll_arrow" src="images/icons/scrolldown.png" />
+                </div>
               </div>
               <div className="Triptique">
                 <h1 className="Triptique_Title">Discover a road to castles</h1>

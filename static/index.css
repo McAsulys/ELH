@@ -6,26 +6,39 @@
   font-family: "Main";
   src : url("fonts/Avenir Black.otf");
 }
+h1 {
+  font-family: "Title";
+}
 h3{
   margin: 0;
 }
 body{
   font-family: "Main";
+  width = 100%;
 }
 header{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  max-height: 90px;
+  max-height: 115px;
+  border-bottom: 6px solid #f28400;
 }
 .logo{
   width: 100px;
   height: 90px;
-  margin-left: 10px;
+  margin: 20px 0 20px 0;
 }
 .button{
   text-decoration: underline;
   color: Black;
+}
+.container{
+  width: 1000px;
+  margin: auto;
+}
+.flex{
+  display: flex;
+  justify-content: space-between;
 }
 .menu{
   display: flex;
@@ -36,17 +49,19 @@ header{
   align-items: flex-end;
 }
 .menu a{
+  font-size: 20px;
   color: grey;
   text-decoration: none;
 }
 .menu a:hover{
-  text-decoration: underline;
+  color: #f28400;
   text-decoration-color: orange;
 
 }
 .SearchBar{
   border: 1px solid black;
   width: 200px;
+  padding: 2px;
 }
 .leftside{
   display: flex;
@@ -77,4 +92,31 @@ header{
   border: none;
   color: lightgrey;
   width: 80%;
+}
+
+.Banner {
+  height: 600px;
+  margin-top: -44px;
+  width: 100%;
+  background-image: url("images/background_homepage.jpg");
+}
+.banner_Title{
+  color: white;
+  font-family: "Title";
+  font-size: 4em;
+  text-align: center;
+  padding-top: 70px;
+  font-weight: 100;
+}
+.scroller{
+  text-align: center;
+  font-size: 2em;
+  color: white;
+  margin-top : 240px;
+}
+.scroll{
+  margin-bottom: 0;
+}
+.scroll_arrow{
+  width: 100px;
 }
