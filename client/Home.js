@@ -10,24 +10,26 @@ import {HTTP_SERVER_PORT_IMAGES} from '../server/constants';
 class DisplayCity extends React.Component {
     render() {
         return (
-            <div id="city_display">
-                <p><Link to={'/city/' + this.props.a._id}><img width="250" height="250" src={this.props.a.picture} /></Link></p>
-                <p>{this.props.a.name}</p>
-            </div>
-        );
+                <div id="city_display">
+                    <p><Link to={'/city/' + this.props.a._id}><img width="250" height="250" src={this.props.a.picture} /></Link></p>
+                    <p>{this.props.a.name}</p>
+                </div>
+                );
     }
-};
+}
+;
 
 class DisplayActivity extends React.Component {
     render() {
         return (
-            <div id="city_display">
-                <p><Link to={'/event/' + this.props.a._id}><img width="250" height="250" src={this.props.a.picture} /></Link></p>
-                <p>{this.props.a.name}</p>
-            </div>
-        );
+                <div id="city_display">
+                    <p><Link to={'/event/' + this.props.a._id}><img width="250" height="250" src={this.props.a.picture} /></Link></p>
+                    <p>{this.props.a.name}</p>
+                </div>
+                );
     }
-};
+}
+;
 
 export default class Home extends React.Component {
     constructor(props) {
@@ -42,75 +44,93 @@ export default class Home extends React.Component {
                 .then(data => this.setState({cities: data}))
                 .catch(err => console.log(err));
     }
-    
-    addCity(e) {
-        e.preventDefault();
-        const cityName = this.state.name;
-        const cityLatitude = this.state.lat;
-        const cityLongitude = this.state.long;
-
-        fetch('/newCity', {
-            method: 'POST', headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({cityName, cityLatitude, cityLongitude})
-        }).then(res => {
-            if (res.ok) {
-                res.json().then(id => console.log("City added with id " + id));
-                this.loadData();
-            }
-            else
-                res.json().then(err => alert("Failed to add city: " + err.message));
-        }).catch(err => alert("Error in sending data to server: " + err.message));
-        
-        this.setState({name: "", lat: null, long:null});
-    }
-    
-    handleNameChange(e) {
-        this.setState({name: e.target.value});
-    }
-    
-    handleLatChange(e) {
-        this.setState({lat: e.target.value});
-    }
-    
-    handleLongChange(e) {
-        this.setState({long: e.target.value});
-    }
-
     render() {
-        let cities_display = this.state.cities.slice(0, 3).map(c => {return <DisplayCity a={c} />});
-        let castles = ([].concat(...this.state.cities.slice(0,4).map(c => c.activities)).filter(a => a.nature === "castle")).map(c => <DisplayActivity a={c} />);
-        let events = ([].concat(...this.state.cities.slice(0,3).map(c => c.activities)).filter(a => a.nature === "event")).map(c => <DisplayActivity a={c} />);
-        
-        
+        let cities_display = this.state.cities.slice(0, 3).map(c => {
+            return <DisplayCity a={c} />
+                    });
+        let castles = ([].concat(...this.state.cities.slice(0, 4).map(c => c.activities)).filter(a => a.nature === "castle")).map(c => <DisplayActivity a={c} />);
+        let events = ([].concat(...this.state.cities.slice(0, 3).map(c => c.activities)).filter(a => a.nature === "event")).map(c => <DisplayActivity a={c} />);
+
+
         return (
-            <div>
-                <h1>My Cities... The places to be!</h1>
-                <p> You can find in this website many cities with beautiful places, events (festivals, concerts and so on).
-                    Please, join us, and you will have the possibilities to participate to this new social network. <br />
-                    Enjoy!!
-                </p>
-                
-                <div id="city_row">
-                    {cities_display}
-                </div>
-                
-                <div id="city_row">
-                    {castles}
-                </div>
-                
-                <div id="city_row">
-                    {events}
-                </div>
-                
-                <h2>Insert a new city</h2>
-                <form onSubmit={(e) => this.addCity(e)}>
-                    <input type="text" value={this.state.name} onChange={(e) => {this.handleNameChange(e)}} placeholder="Name of the city" /> <br />
-                    <input type="number" value={this.state.lat} onChange={(e) => {this.handleLatChange(e)}} placeholder="Latitude" /> <br />
-                    <input type="number" value={this.state.long} onChange={(e) => {this.handleLongChange(e)}} placeholder="Longitude" /> <br />
+                <div>
+                    <header>
+                        <img className="logo" src="images/logo.png" />
+                        <div className="menu">
+                            <a href="/*Home*/">Home</a>
+                            <a href="/*Countries*/">Countries</a>
+                            <a href="/*contact*/">Countries</a>
+                        </div>
+                        <div className="leftside">
+                            <div className="Login">
+                                <h3>McAsulys</h3>
+                                <a className="button" href="/*lougout link*/">Log out</a>
+                            </div>
+                            <div className="SearchBar">
+                                <form action="" method="GET">
+                                    <input className="search" type="text" name="search"></input>
+                                    <input className="loupe" type="submit"></input>
+                                </form>
+                            </div>
+                        </div>
+                    </header>
                     
-                    <input type="submit" value="Create" />
-                </form>
-            </div>
+                    <div className="Banner">
+                        <h1 className="banner_Title">Dicovering our shared history</h1>
+                        <p className="scroll">Scroll down</p>
+                        <img className="scroll_arrow" href="/*lien de l'image*/" />
+                    </div>
+                    
+                    <div className="Triptique">
+                        <h1 className="Triptique_Title">Discover a road to castles</h1>
+                        <div id="city_row">
+                            {castles}
+                        </div>
+                    </div>
+                    
+                    <div className="Triptique">
+                        <h1 className="Triptique_Title">What goes around ?</h1>
+                        <div id="city_row">
+                            {cities_display}
+                        </div>
+                    </div>
+                    
+                    <div className="Triptique">
+                        <h1 className="Triptique_Title">What is planned ?</h1>
+                        <div id="city_row">
+                            {events}
+                        </div>
+                    </div>
+                    
+                    <h2>Insert a new city</h2>
+                    <form onSubmit={(e) => this.addCity(e)}>
+                        <input type="text" value={this.state.name} onChange={(e) => {
+                        this.handleNameChange(e)
+                }} placeholder="Name of the city" /> <br />
+                        <input type="number" value={this.state.lat} onChange={(e) => {
+                            this.handleLatChange(e)
+                }} placeholder="Latitude" /> <br />
+                        <input type="number" value={this.state.long} onChange={(e) => {
+                                this.handleLongChange(e)
+                }} placeholder="Longitude" /> <br />
+                
+                        <input type="submit" value="Create" />
+                    </form>
+                    
+                    <footer>
+                        <div>
+                            <a href="/*terms and conditions*/">Terms and conditions</a>
+                            <a href="/*site map*/">Site map</a>
+                            <a href="/*Contact us*/">Contact us</a>
+                        </div>
+                        
+                        <div>
+                            <a href="/*facebook*/"><img src="/*facebook*/" /></a>
+                            <a href="/*Twitter*/"><img src="/*Twitter*/" /></a>
+                            <a href="/*Insta*/"><img src="/*Insta*/" /></a>
+                        </div>
+                    </footer>
+                </div>
         );
     }
 }

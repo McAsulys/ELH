@@ -12,7 +12,7 @@ module.exports = {
         contentBase: 'static',
         proxy: {
             '/': {
-                target: 'http://localhost:9090'
+                target: 'http://[::1]:9090'
             }
         },
         historyApiFallback: true

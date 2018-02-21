@@ -40,6 +40,7 @@ app.get('/cities/:id', (req, res) => {
         });
 });
 
+
 app.get('/activity/:id', (req, res) => {
     console.log("REQ ", req.params.id);
     db.collection('activities').findOne({"_id": ObjectID(req.params.id)})
@@ -50,12 +51,14 @@ app.get('/activity/:id', (req, res) => {
         });
 });
      
+
 app.post('/images', imagesUpload(
     './static/' + IMAGES,
     HTTP_SERVER_PORT_IMAGES
 ));
 
 app.post('/newCity', (req, res) => {
+  console.log("passed");
     const c = {
         name: req.body.cityName,
         picture : '/images/Aix/aix.jpg',
@@ -73,24 +76,3 @@ app.post('/newCity', (req, res) => {
             res.status(500).json({message: `Internal Server Error: ${error}`});
         });
 });
-
-app.post('/newActivity', (req, res) => {
-    const c = {
-        activity: req.body.activity,
-        description: req.body.description,
-        url : req.body.url,
-        coordinates: {
-            lat: req.body.cityLatitude,
-            long: req.body.cityLongitude
-        },
-        description: "",
-        activities: []
-    };
-    db.collection('cities').insertOne(c)
-        .then(result => res.json(result.insertedId))
-        .catch(error => {
-            console.log(error);
-            res.status(500).json({message: `Internal Server Error: ${error}`});
-        });
-});
-

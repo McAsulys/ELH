@@ -101,10 +101,10 @@ var king_johns_castle = {
     },
     picture: ["images/Carlingford/king_johns_castle.jpg"],
     comments: [
-            
+
     ],
     likers: [
-        
+
     ],
     description: "",
     url: "http://www.carlingford.ie/"
@@ -120,10 +120,10 @@ var taaffes_castle = {
     },
     picture: ["images/Carlingford/taaffes_castle.jpg"],
     comments: [
-            
+
     ],
     likers: [
-        
+
     ],
     description: "",
     url: "http://www.carlingford.ie/"
@@ -139,10 +139,10 @@ var proleek_dolmen = {
     },
     picture: ["images/Carlingford/proleek_dolmen.jpg"],
     comments: [
-            
+
     ],
     likers: [
-        
+
     ],
     description: "",
     url: "http://www.carlingford.ie/"

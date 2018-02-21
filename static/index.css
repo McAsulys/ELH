@@ -1,43 +1,91 @@
-* {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}nav{
-    width:100%;
-    height:50px;
-    background-color:#EEE;
-}nav a{
+
+#city_display{
     display:inline-block;
-    background-color:#EEE;
-    width:100px;
-    height:100%;
-    margin-right:20px;
-    font-size: 30px;
-}nav a:hover{
-    background-color:#DDD;
-}#city{
-    display:inline-block;
-    width:250px;
-    height:300px;
-    margin-left:10px;
-    margin-right:10px;
-    background-color:#EEE;
-}#city h2{
-    font-size:20px;
-    text-align:center;
-    display:block;
-    height:50px;
-    background-color:#CCC;
-}#city img{
-    width:250px;
-    height:250px;
 }
-#mainimages{
-    width:300px;
-    height: 250px;
-}#city_display{
-    display:inline-block;
-}#city_row{
+#city_row{
     width:800px;
     margin-bottom:100px;
     margin-left:auto;
     margin-right:auto;
+}
+@font-face {
+  font-family: "Title";
+  src : url("fonts/ROCK.TTF");
+}
+@font-face {
+  font-family: "Main";
+  src : url("fonts/Avenir Black.otf");
+}
+h3{
+  margin: 0;
+}
+body{
+  font-family: "Main";
+}
+header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-height: 90px;
+}
+.logo{
+  width: 100px;
+  height: 90px;
+  margin-left: 10px;
+}
+.button{
+  text-decoration: underline;
+  color: Black;
+}
+.menu{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+  width: 400px;
+  align-items: flex-end;
+}
+.menu a{
+  color: grey;
+  text-decoration: none;
+}
+.menu a:hover{
+  text-decoration: underline;
+  text-decoration-color: orange;
+
+}
+.SearchBar{
+  border: 1px solid black;
+  width: 200px;
+}
+.leftside{
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  margin-right: 10px;
+}
+.Login{
+  font-size: 0.8em;
+  text-align: right;
+  justify-content: space-around;
+  padding: 0;
+  margin-bottom: 10px;
+}
+.loupe{
+  width: 25px;
+  height: 25px;
+  background-image: url("images/icons/search.png");
+  background-clip: border-box;
+  background-size: contain;
+
+  /*fixe buuton basic style*/
+  font-size: 0;
+  border: none;
+  background-color: white;
+}
+.search{
+  border: none;
+  color: lightgrey;
+  width: 80%;
+>>>>>>> 4064d5ad52245eef8371375c078c3e2dee6b4f4c
 }
