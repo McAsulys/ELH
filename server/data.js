@@ -9,6 +9,10 @@ var gilles = {
     _id: ObjectId(),
     email: "gilles@iut.fr"
 };
+var aaron = {
+    _id: ObjectId(),
+    email: "aaron@gmail.ie"
+};
 db.users.drop();
 db.users.insert([derek, gilles]);
 
@@ -85,14 +89,107 @@ var festival = {
     dateStart: new Date('2016-6-15'),
     dateEnd: new Date('2016-7-10')
 };
+
+
+var king_johns_castle = {
+    _id: ObjectId(),
+    name: "King John's Castle",
+    nature: "place",
+    editor: {
+        _id: aaron._id,
+        email: aaron.email
+    },
+    pictures: ["images/Carlingford/king_johns_castle.jpg"],
+    comments: [
+
+    ],
+    likers: [
+
+    ],
+    description: "",
+    url: "http://www.carlingford.ie/"
+};
+
+var taaffes_castle = {
+    _id: ObjectId(),
+    name: "Taaffe's Castle",
+    nature: "place",
+    editor: {
+        _id: aaron._id,
+        email: aaron.email
+    },
+    pictures: ["images/Carlingford/taaffes_castle.jpg"],
+    comments: [
+
+    ],
+    likers: [
+
+    ],
+    description: "",
+    url: "http://www.carlingford.ie/"
+};
+
+var proleek_dolmen = {
+    _id: ObjectId(),
+    name: "Proleek Dolmen",
+    nature: "place",
+    editor: {
+        _id: aaron._id,
+        email: aaron.email
+    },
+    pictures: ["images/Carlingford/proleek_dolmen.jpg"],
+    comments: [
+
+    ],
+    likers: [
+
+    ],
+    description: "",
+    url: "http://www.carlingford.ie/"
+};
+
+var oyster_festival = {
+    _id: ObjectId(),
+    name: "Oyster Festival",
+    nature: "event",
+    editor: {
+        _id: aaron._id,
+        email: aaron.email
+    },
+    pictures: ["/images/Carlingford/oyster_festival_01.jpg", "/images/Carlingford/oyster_festival_02.jpg"],
+    comments: [{
+        user: {
+            _id: aaron._id,
+            email: aaron.email
+        },
+        date: new Date("2018"),
+        text: "Nice place"
+    }, {
+        user: {
+            _id: gilles._id,
+            email: gilles.email
+        },
+        date: new Date("2015"),
+        text: "Bof!"
+    }],
+    likers: [],
+    description: "",
+    url: "http://www.carlingford.ie/"
+};
+
+var wawel_castle = {
+    _id = ObjectId(),
+    name: ''
+};
+
 db.activities.drop();
-db.activities.insert([granet, saintSauveur, festival]);
+db.activities.insert([granet, saintSauveur, festival, king_johns_castle, taaffes_castle, proleek_dolmen, oyster_festival]);
 
 
 // **** cities
 var aix = {
     _id: ObjectId(),
-    name: 'Aix en Provence',
+    name: "Aix en Provence",
     coordinates: {
         long: "43.5263",
         lat: "5.4454"
@@ -130,5 +227,52 @@ var boulogne = {
     picture: '/images/Boulogne/centre.jpg',
     activities: []
 };
+
+var carlingford = {
+    _id: ObjectId(),
+    name: "Carlingford",
+    coordinates: {
+        long: "54.0469",
+        lat: "6.1902"
+    },
+    description: "",
+    picture: "/images/Carlingford/carlingford.jpg",
+    activities: [{
+        _id: king_johns_castle._id,
+        name: king_johns_castle.name,
+        nature: king_johns_castle.nature,
+        picture: king_johns_castle.pictures[0]
+    }, {
+        _id: taaffes_castle._id,
+        name: taaffes_castle.name,
+        nature: taaffes_castle.nature,
+        picture: taaffes_castle.pictures[0]
+    }, {
+        _id: proleek_dolmen._id,
+        name: proleek_dolmen.name,
+        nature: proleek_dolmen.nature,
+        picture: proleek_dolmen.pictures[0]
+    }, {
+        _id: oyster_festival._id,
+        name: oyster_festival.name,
+        nature: oyster_festival.nature,
+        picture: oyster_festival.pictures[0]
+    }]
+};
+
+var Krakow = {
+    _id: ObjectId(),
+    name: "Krakow",
+    coordinates: {
+        long: "50.0647",
+        lat: "19.9450"
+    },
+    description: "",
+    picture: "/images/Krakow/krakow_01.jpg",
+    activities: [{
+
+    }]
+};
+
 db.cities.drop();
-db.cities.insert([aix, boulogne]);
+db.cities.insert([aix, boulogne,carlingford]);
