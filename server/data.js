@@ -106,7 +106,7 @@ var king_johns_castle = {
     likers: [
 
     ],
-    description: "",
+    description: "King Johns Castle is a 13th century castle located on Kings Island in Ireland next to the river Shanon. The castle was built on the orders of King John in 1200. The castle is the visitor attraction right now.",
     url: "http://www.carlingford.ie/"
 };
 
@@ -119,13 +119,18 @@ var taaffes_castle = {
         email: aaron.email
     },
     picture: ["images/Carlingford/taaffes_castle.jpg"],
-    comments: [
-
-    ],
+    comments: [{
+        user: {
+            _id: gilles._id,
+            email: gilles.email
+        },
+        date: new Date(""),
+        text: "Asdf"
+    }],
     likers: [
 
     ],
-    description: "",
+    description: "Taaffes Castle is situated in the beautiful medieval town of Carlingford and is located what is now currently located at the centre of the Village. It was mostly likely to have been built at the start of the 16th century as a fortified townhouse and a trading depot , But when it was built it was most likely a Shoreline Merchant House where deliveries from the sea where stored and collected. Now try to imagine the original shore line coming to the base of the building. It must have been very convenient for the merchant who lived here, The merchants could have loaded or unload their wares on or off a small boat which would bring the goods to and from a larger ship anchored in deeper waters out in the harbour. This tower house was a very popular style of building amongst the merchant and upper classes of towns all around Ireland, it was easily defended and its height meant that you could have a lot of living space in a small area, it allowed for the construction of substantial buildings on small burgage plots. But Taaffes Castle had more space than most because at the corner of the building there is a number of projecting stones which are the remains of a brawn wall. Brawn walls enclosed an open area around the tower house which usually contained a garden and wooden buildings and outhouses. They are normally found around similar buildings in the country, However it is quite unusual to find one of these in an urban setting.",
     url: "http://www.carlingford.ie/"
 };
 
@@ -144,7 +149,7 @@ var proleek_dolmen = {
     likers: [
 
     ],
-    description: "",
+    description: "The magnificent Proleek Portal Tomb, situated in the grounds of Ballymascanlon Hotel on the legendary Cooley Peninsula, is one of the finest examples of its kind in Ireland. Portal tombs have two tall stones at the front (portal stones) and a smaller stone at the back supporting a large capstone. A portal tomb resembles a giants table and is sometimes called a dolmen, which comes from the Breton word tolmen meaning stone table. Proleek Portal Tomb is about 3m high and has a huge capstone weighing approximately 35 tons. Legend says that a wish will be granted to anyone who can throw a pebble on its capstone so that it stays there. The two front portal stones are 2m high. Known as the Giants Load, it is believed that it was carried to Ireland by a Scottish giant named Parrah Boug McShagean (who is said to be buried nearby).",
     url: "http://www.carlingford.ie/"
 };
 
@@ -156,12 +161,8 @@ var oyster_festival = {
         _id: aaron._id,
         email: aaron.email
     },
-    picture: ["/images/Carlingford/oyster_festival_01.jpg", "/images/Carlingford/oyster_festival_02.jpg"],
+    picture: ["/images/Carlingford/oyster_festival_01.jpg"],
     comments: [{
-        user: {
-            _id: aaron._id,
-            email: aaron.email
-        },
         date: new Date("2018"),
         text: "Nice place"
     }, {
@@ -173,7 +174,7 @@ var oyster_festival = {
         text: "Bof!"
     }],
     likers: [],
-    description: "",
+    description: "The Carlingford Oyster Festival offers a four day fun-filled festival for the whole family and is packed with traditional childrens activities including Magic Show, Face Painting, the ever popular Teddy Bears Picnic, Free Kayaking in the Harbour, Childrens Funfair & Bouncing Castles and much, much more!",
     url: "http://www.carlingford.ie/",
     dateStart: new Date('2016-6-15'),
     dateEnd: new Date('2016-7-10')
@@ -211,6 +212,38 @@ var pierogi_festival = {
     dateEnd: new Date('2018-8-15')
 };
 
+var festival_of_music = {
+    _id: ObjectId(),
+    name: "Festival of Music",
+    nature: "event",
+    editor: {
+        _id: aaron._id,
+        email: aaron.email
+    },
+    picture: ["/images/Krakow/festival_of_music_01.jpg"],
+    comments: [],
+    likers: [],
+    description: "This festival of classical music has the reputation of being able to lure venerable names on the world scene to perform in Cracow, often at the most evocative historic venues in the city.",
+    url: "http://www.polandculinaryvacations.com/blog/culinary-cultural-events-in-poland-2013-calendar/",
+    dateStart: new Date('2018-8-15'),
+    dateEnd: new Date('2018-8-31')
+};
+
+var st_marys_basilica = {
+    _id: ObjectId(),
+    name: "St. Mary's Basilica",
+    nature: "place",
+    editor: {
+        _id: aaron._id,
+        email: aaron.email
+    },
+    picture: ["/images/Krakow/festival_of_music_01.jpg"],
+    comments: [],
+    likers: [],
+    description: "This festival of classical music has the reputation of being able to lure venerable names on the world scene to perform in Cracow, often at the most evocative historic venues in the city. ",
+    url: "http://www.polandculinaryvacations.com/blog/culinary-cultural-events-in-poland-2013-calendar/",
+};
+
 var fortress_of_carcassonne = {
     _id: ObjectId(),
     name: "Fortress of Carcassonne",
@@ -244,7 +277,7 @@ var festival_de_carcassonne = {
 };
 
 db.activities.drop();
-db.activities.insert([granet, saintSauveur, festival, king_johns_castle, taaffes_castle, proleek_dolmen, oyster_festival, wawel_castle, pierogi_festival, fortress_of_carcassonne, festival_de_carcassonne]);
+db.activities.insert([granet, saintSauveur, festival, king_johns_castle, taaffes_castle, proleek_dolmen, oyster_festival, wawel_castle, st_marys_basilica, pierogi_festival, festival_of_music, fortress_of_carcassonne, festival_de_carcassonne]);
 
 
 // **** cities
@@ -297,7 +330,7 @@ var carlingford = {
         long: "54.0469",
         lat: "6.1902"
     },
-    description: "",
+    description: "Carlingford is a coastal town and civil parish in northern County Louth, Ireland. It is situated on the southern shore of Carlingford Lough with Slieve Foy as a backdrop, sometimes known as Carlingford Mountain, It is the main town on the Cooley Peninsula. Located on the R176/R173 roads between Greenore and Omeath village, Carlingford is approximately 27 km north east (by road) from Dundalk (15.6 km directly), 90 km north of Dublin and 11 km south of the border with Northern Ireland. Carlingford won the Irish Tidy Towns Competition in 1988. Carlingford still retains its medieval layout noticeable by the narrow lanes and small streets. Tholsel Street is where the last of the medieval walled towns gates can still be seen, called The Tholsel which apparently was also used as a gaol, on Tholsel Street itself there is still a 16th-century Town House known as the Mint.",
     picture: "/images/Carlingford/carlingford.jpg",
     activities: [{
         _id: king_johns_castle._id,
@@ -346,12 +379,24 @@ var krakow = {
         nature: wawel_castle.nature,
         picture: wawel_castle.picture
     },{
+        _id: st_marys_basilica._id,
+        name: st_marys_basilica.name,
+        nature: st_marys_basilica.nature,
+        picture: st_marys_basilica.picture,
+    },{
         _id: pierogi_festival._id,
         name: pierogi_festival.name,
         nature: pierogi_festival.nature,
         picture: pierogi_festival.picture,
         dateStart: pierogi_festival.dateStart,
         dateEnd: pierogi_festival.dateEnd
+    },{
+        _id: festival_of_music._id,
+        name: festival_of_music.name,
+        nature: festival_of_music.nature,
+        picture: festival_of_music.picture,
+        dateStart: festival_of_music.dateStart,
+        dateEnd: festival_of_music.dateEnd
     }]
 };
 
@@ -377,7 +422,7 @@ var carcassonne = {
         dateStart: festival_de_carcassonne.dateStart,
         dateEnd: festival_de_carcassonne.dateEnd
     }]
-};
+}
 
 db.cities.drop();
 db.cities.insert([carlingford, krakow, carcassonne, aix]);
