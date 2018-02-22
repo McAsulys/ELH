@@ -77,38 +77,40 @@ export default class Home extends React.Component {
 
         return (
                 <div>
+                  <div className="frontscroll">
                     <header>
-                        <img className="logo" src="images/logo.png" />
-                        <div className="container flex">
-                          <div className="menu">
-                              <a href="/">Home</a>
-                              <a href="/country">Countries</a>
-                              <a href="/contact">Contact</a>
+                      <img className="logo" src="images/logo.png" />
+                      <div className="container flex">
+                        <div className="menu">
+                          <a href="/">Home</a>
+                          <a href="/country">Countries</a>
+                          <a href="/contact">Contact</a>
+                        </div>
+                        <div className="leftside">
+                          <div className="Login">
+                            <h3>McAsulys</h3>
+                            <a className="button" href="/logout">Log out</a>
                           </div>
-                          <div className="leftside">
-                              <div className="Login">
-                                  <h3>McAsulys</h3>
-                                  <a className="button" href="/*lougout link*/">Log out</a>
-                              </div>
-                              <div className="SearchBar">
-                                  <form action="" method="GET">
-                                      <input className="search" type="text" name="search"></input>
-                                      <input className="loupe" type="submit"></input>
-                                  </form>
-                              </div>
+                          <div className="SearchBar">
+                            <form action="" method="GET">
+                              <input className="search" type="text" name="search"></input>
+                              <input className="loupe" type="submit"></input>
+                            </form>
                           </div>
                         </div>
+                      </div>
                     </header>
 
                     <div className="Banner">
                       <h1 className="banner_Title">Dicovering<br /> our shared history</h1>
                       <div className="scroller">
-                        <p className="scroll">Scroll down</p>
-                        <img className="scroll_arrow" src="../images/icons/scrolldown.png" />
+                      <p className="scroll">Scroll down</p>
+                      <img className="scroll_arrow" src="../images/icons/scrolldown.png" />
                       </div>
                     </div>
+                  </div>
 
-                    <div className="Triptique">
+                    <div className="Triptique" id="toScroll">
                         <h1 className="Triptique_Title">Discover a road to castles</h1>
                         <div id="city_row">
                             {castles}
