@@ -220,3 +220,44 @@ footer div a:hover{
   display: flex;
   justify-content: space-between;
 }
+
+/***city***/
+
+.city_front{
+  background-size: cover;
+}
+.city_front{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.city_front h1{
+  font-family: "Title";
+  font-size: 3em;
+}
+.city_desc{
+  line-height: 2em;
+  width: 600px;
+  color: white;
+  padding: 10px;
+  background-color: #00000090;
+  margin: auto;
+}
+
+.activitylist_image{
+  width: 300px;
+  height: 300px;
+  background-size: cover;
+}
+.displayOnPage a{
+  display: flex;
+  text-decoration: underline;
+  text-decoration-color: #f28400;
+  text-transform: uppercase;
+  color: black;
+  font-family: "Title";
+}
+.displayOnPage h1{
+  margin-left: 20px;
+  -webkit-margin-before:0;
+
+}

@@ -83,7 +83,7 @@ export default class Home extends React.Component {
                           <div className="menu">
                               <a href="/">Home</a>
                               <a href="/country">Countries</a>
-                              <a href="/contact">Countries</a>
+                              <a href="/contact">Contact</a>
                           </div>
                           <div className="leftside">
                               <div className="Login">
@@ -123,7 +123,7 @@ export default class Home extends React.Component {
                     </div>
 
                     <div className="Triptique">
-                        <h1 className="Triptique_Title">What is planned ?</h1>
+                        <h1 className="Triptique_Title">Incomming events</h1>
                         <div id="city_row">
                             {events}
                         </div>
