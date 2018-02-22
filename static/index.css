@@ -242,7 +242,13 @@ footer div a:hover{
   background-color: #00000090;
   margin: auto;
 }
-
+.city_desc a{
+  color: #f28400;
+}
+.activityList{
+  width: 1000px;
+  margin: auto;
+}
 .activitylist_image{
   width: 300px;
   height: 300px;
@@ -250,14 +256,43 @@ footer div a:hover{
 }
 .displayOnPage a{
   display: flex;
+  color: black;
+  font-family: "Title";
+  text-decoration: none;
+
+  padding-top: 20px;
+}
+.displayOnPage h1{
   text-decoration: underline;
   text-decoration-color: #f28400;
   text-transform: uppercase;
-  color: black;
-  font-family: "Title";
-}
-.displayOnPage h1{
   margin-left: 20px;
   -webkit-margin-before:0;
-
+}
+.dOP_desc{
+  width: 650px;
+  padding-left: 20px;
+  line-height: 2em;
+  text-align: justify;
+}
+.haveUbeen{
+  text-align: center;
+  width: 400px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+.haveUbeen a{
+  color: black;
+  padding: 5px;
+  height: 20px;
+  border: 1px solid #f28400;
+  text-decoration: none;
+  margin-top: 18px;
+  transition: all 200ms ease-out;
+}
+.haveUbeen a:hover{
+  border-color: black;
+  background-color: #f28400;
 }

@@ -19,8 +19,22 @@ class Display extends React.Component {
               <div className="displayOnPage">
                 <Link to={'/event/'+this.props.place._id}>
                   <div className="activitylist_image" style={style}></div>
-                  <h1>{this.props.place.name}</h1>
-                  <p className="dOP_desc">{this.props.place.description}</p>
+                  <div className="activityList_left">
+                    <h1>{this.props.place.name}</h1>
+                    <p className="dOP_desc">{this.props.place.description} /*remove lorem ipsum when description works*/
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Curabitur mattis, est eget mattis accumsan, sapien metus
+                      blandit turpis, sit amet cursus felis odio at ipsum.
+                      Praesent vitae mauris non enim tempor maximus porttitor non dolor.
+                      Nunc viverra nisl at magna fringilla, quis dignissim sapien bibendum.
+                      Maecenas dignissim ligula et lacinia mollis.
+                      Donec in ex ac mi malesuada efficitur id vel orci.
+                      In a erat neque. Donec placerat tincidunt placerat.
+                      Fusce volutpat blandit bibendum. Phasellus sodales erat vitae
+                      nulla gravida pharetra. Suspendisse pellentesque non nunc
+                      non condimentum.
+                    </p>
+                  </div>
                 </Link>
               </div>
             </div>
@@ -123,16 +137,21 @@ export default class City extends React.Component {
                   </div>
                 </div>
               </div>
-
+              <div className="activityList">
                 {this.state.city.activities.filter(a =>a.nature!='event')
-                .map(a => <Display place={a} />)}
+                  .map(a => <Display place={a} />)}
 
-                {this.state.city.activities.filter(a =>a.nature=='event')
-                .map(b => <Display place={b} />)}
+                  {this.state.city.activities.filter(a =>a.nature=='event')
+                    .map(b => <Display place={b} />)}
+              </div>
 
-                <h4>Have you been in {this.state.city.name} ?<br />
-                Contribute by filling in this <a href="/addActivity">Form</a></h4>
-                <form onSubmit={(e) => this.addActivity(e)}>
+                <div  className="haveUbeen">
+                  <p>Have you been in {this.state.city.name} ?<br />
+                  Contribute by filling in this :</p>
+                <a href="/addActivity">Add Activity</a>
+                </div>
+
+              <form onSubmit={(e) => this.addActivity(e)}>
                     <input type="text" value={this.state.activity} onChange={(e) => {this.handleActivityChange(e)}} placeholder="New activity" /> <br />
                     <input type="text" value={this.state.description} onChange={(e) => {this.handleDescriptionChange(e)}} placeholder="Description" /> <br />
                     <input type="url" value={this.state.url} onChange={(e) => {this.handleUrlChange(e)}} placeholder="URL" /> <br />
