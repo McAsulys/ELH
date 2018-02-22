@@ -16,12 +16,15 @@ class DisplayCity extends React.Component {
       console.log(this.props.a.picture);
         return (
                 <div className="city_display">
-                    <p>
                       <Link to={'/city/' + this.props.a._id}>
-                        <div class="tryptique_image" style={style}></div>
+                        <div className="tryptique_image" style={style}>
+                          <div className="overlay_orange">
+                            <div>
+                              <p className="city_title-link">{this.props.a.name}</p>
+                            </div>
+                          </div>
+                        </div>
                       </Link>
-                    </p>
-                    <p>{this.props.a.name}</p>
                 </div>
                 );
     }
@@ -30,10 +33,20 @@ class DisplayCity extends React.Component {
 
 class DisplayActivity extends React.Component {
     render() {
+      const style = {
+        backgroundImage: "url("+this.props.a.picture+")"
+      };
         return (
                 <div className="city_display">
-                    <p><Link to={'/event/' + this.props.a._id}><img width="250" height="250" src={this.props.a.picture} /></Link></p>
-                    <p>{this.props.a.name}</p>
+                    <Link to={'/event/' + this.props.a._id}>
+                      <div className="tryptique_image" style={style}>
+                        <div className="overlay_orange">
+                          <div>
+                            <p className="city_title-link">{this.props.a.name}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
                 </div>
                 );
     }
@@ -60,6 +73,7 @@ export default class Home extends React.Component {
         let castles = ([].concat(...this.state.cities.slice(0, 4).map(c => c.activities)).filter(a => a.nature === "castle")).map(c => <DisplayActivity a={c} />);
         let events = ([].concat(...this.state.cities.slice(0, 3).map(c => c.activities)).filter(a => a.nature === "event")).map(c => <DisplayActivity a={c} />);
 
+        console.log("citie22"+cities_display);
 
         return (
                 <div>
@@ -115,16 +129,16 @@ export default class Home extends React.Component {
                         </div>
                     </div>
                     <footer>
-                        <div>
-                            <a href="/*terms and conditions*/">Terms and conditions</a>
-                            <a href="/*site map*/">Site map</a>
-                            <a href="/*Contact us*/">Contact us</a>
+                        <div className="footer_link">
+                            <a href="/cgu">Terms and conditions</a>
+                            <a href="/map">Site map</a>
+                            <a href="/contact">Contact us</a>
                         </div>
 
-                        <div>
-                            <a href="/*facebook*/"><img src="/*facebook*/" /></a>
-                            <a href="/*Twitter*/"><img src="/*Twitter*/" /></a>
-                            <a href="/*Insta*/"><img src="/*Insta*/" /></a>
+                        <div className="socials">
+                            <a href="/facebook"><img className="social" src="images/icons/fb.png" /></a>
+                            <a href="/Twitter"><img className="social" src="images/icons/twitter-icon.png" /></a>
+                            <a href="/Insta"><img className="social" src="images/icons/insta.png" /></a>
                         </div>
                     </footer>
                 </div>
