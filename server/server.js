@@ -40,9 +40,8 @@ app.get('/cities/:id', (req, res) => {
         });
 });
 
-
 app.get('/activity/:id', (req, res) => {
-    console.log("REQ ", req.params.id);
+    console.log("REQ_ACTIVITY ", req.params.id);
     db.collection('activities').findOne({"_id": ObjectID(req.params.id)})
         .then(activity => res.json(activity))
         .catch(error => {
@@ -58,7 +57,6 @@ app.post('/images', imagesUpload(
 ));
 
 app.post('/newCity', (req, res) => {
-  console.log("passed");
     const c = {
         name: req.body.cityName,
         picture : '/images/Aix/aix.jpg',
@@ -69,10 +67,83 @@ app.post('/newCity', (req, res) => {
         description: "",
         activities: []
     };
+    
     db.collection('cities').insertOne(c)
         .then(result => res.json(result.insertedId))
         .catch(error => {
             console.log(error);
+            res.status(500).json({message: `Internal Server Error: ${error}`});
+        });
+});
+
+app.post('/newComment', (req, res) => {
+    const c = {
+        text: req.body.comment,
+        activity_id: req.body.activity_id,
+        date: new Date("2018"),
+        user: {
+            _id: "aaron",
+            email: "aaron@gmail.com"
+        }
+    };
+    
+    console.log("commemt",c);
+    
+    db.collection('activities').findOne({"_id": ObjectID(req.body.activity_id)})
+        .then(result => {
+            console.log("res", result);
+            c._id = result._id;
+            db.collection('activities').updateOne({_id: ObjectID(req.body.activity_id)}, {$push: {comments: c}});
+            res.json(result._id);
+        });
+});
+
+app.post('/newPlace', (req, res) => {
+    console.log("Adding Place");
+    const c = {
+        name: req.body.name,
+        nature: "place",
+        editor: [],
+        picture: req.body.picture,
+        comments: [],
+        likers: [],
+        description: req.body.description,
+        url: req.body.url
+    };
+    
+    db.collection('activities').insertOne(c)
+        .then(result => {
+            c._id = result.insertedId;
+            db.collection('cities').updateOne({_id: ObjectID(req.body.city_id)}, {$push: {activities: c}});
+            res.json(result.insertedId);
+        })
+        .catch(error => {
+            res.status(500).json({message: `Internal Server Error: ${error}`});
+        });
+});
+
+app.post('/newEvent', (req, res) => {
+    console.log("Adding Place");
+    const c = {
+        name: req.body.name,
+        nature: req.body.nature,
+        editor: [],
+        picture: req.body.picture,
+        comments: [],
+        likers: [],
+        description: req.body.description,
+        url: req.body.url,
+        startDate: req.body.startDate,
+        endDate: req.body.endDate
+    };
+    
+    db.collection('activities').insertOne(c)
+        .then(result => {
+            c._id = result.insertedId;
+            db.collection('cities').updateOne({_id: ObjectID(req.body.city_id)}, {$push: {activities: c}});
+            res.json(result.insertedId);
+        })
+        .catch(error => {
             res.status(500).json({message: `Internal Server Error: ${error}`});
         });
 });

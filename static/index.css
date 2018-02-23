@@ -14,7 +14,7 @@ h3{
 }
 body{
   font-family: "Main";
-  width = 100%;
+  width: 100%;
 }
 .frontscroll{
   height: 100vh;
@@ -97,6 +97,7 @@ header{
   border: none;
   color: lightgrey;
   width: 80%;
+
 }
 
 .Banner {
@@ -305,4 +306,5 @@ footer div a:hover{
 .haveUbeen a:hover{
   border-color: black;
   background-color: #f28400;
+
 }
