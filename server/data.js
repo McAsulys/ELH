@@ -106,7 +106,7 @@ var king_johns_castle = {
     likers: [
 
     ],
-    description: "King Johns Castle is a 13th century castle located on Kings Island in Ireland next to the river Shanon. The castle was built on the orders of King John in 1200. The castle is the visitor attraction right now.",
+    description: "Carlingford Castle's west wing was built in the late 12th century by Hugh de Lacy, Lord of Meath shortly after the Norman invasion of Ireland. It acquired the name King John's Castle after King John, Lord of Ireland, supposedly stayed there for three days in 1210, during his second expedition, when he invaded Ulster to apprehend Hugh de Lacy, 1st Earl of Ulster. Local myth claims that he began to draft Magna Carta (agreed in 1215) at Carlingford.[2] Other accounts associate its construction with Ralph Pepper in 1204.[3] The east wing of the castle was added c. 1261. In 1326 the castle was committed to Geoffrey le Blound. Edmond Loundres was constable in 1388, Stephen Gernon in 1400. Henry MacShane O'Neill attempted to take the castle in 1596.",
     url: "http://www.carlingford.ie/"
 };
 
@@ -237,11 +237,11 @@ var st_marys_basilica = {
         _id: aaron._id,
         email: aaron.email
     },
-    picture: ["/images/Krakow/festival_of_music_01.jpg"],
+    picture: ["/images/Krakow/st_marys_basilica_01.jpg"],
     comments: [],
     likers: [],
-    description: "This festival of classical music has the reputation of being able to lure venerable names on the world scene to perform in Cracow, often at the most evocative historic venues in the city. ",
-    url: "http://www.polandculinaryvacations.com/blog/culinary-cultural-events-in-poland-2013-calendar/",
+    description: "Jealousy, cruelty and pain are part of the legend around the Saint Marys Basilica. Two brothers would have been in charge of its construction, but each one attempted to build a taller and more beautiful tower than the others one. When one of them realized that  he was less advanced, he became so wrathful that he killed his brother. Regaining control of himself, he saw what he did and took his own life. This story would be the reason why the two towers of the basilica are asymmetric, and with different architectural styles : the two brothers died so the towers couldnt have been finished then.",
+    url: "http://www.polandculinaryvacations.com/blog/culinary-cultural-events-in-poland-2013-calendar/"
 };
 
 var fortress_of_carcassonne = {
@@ -256,7 +256,7 @@ var fortress_of_carcassonne = {
     comments: [],
     likers: [],
     description: "Fortress of Carcassonne is a medieval citadel located near the French city called Carcassonne. It is located on a hill on the right bank of the river Aude. This citadel has 3 kilometer long double surrounding walls with 52 towers. This fortress is approximately 2500 years old and has been taken by Romans, Visigoths, Saracens and Crusaders. Each conqueror added its own modifications to the castle that is why the castle has so many fortifications.",
-    url: "http://www.carcassonne.org/",
+    url: "http://www.carcassonne.org/"
 };
 
 var festival_de_carcassonne = {
@@ -270,14 +270,94 @@ var festival_de_carcassonne = {
     picture: ["/images/Carcassonne/festival_de_carcassonne_01.jpg"],
     comments: [],
     likers: [],
-    description: "This festival starts in July and takes place in the Carcassonne fortress. It lasts for three weeks ant during this festival on the stage that is situated in the fortress the are dance, music and theatre performances. This festival is very popular among the tourists and French people.",
+    description: "What could be better for the Carcassonne fortress than hosting a big arts festival ? The city took advantage of its particular architecture and huge superficy to guest many different artists of many different arts. For three weeks in July, festival goers will be able to watch to performances in a medieval environment. A good opportunity to enjoy the place, and take many pictures !",
     url: "http://www.festivaldecarcassonne.fr/",
     dateStart: new Date('2018-7-15'),
     dateEnd: new Date('2018-8-31')
 };
 
+var museum_of_chivalry = {
+    _id: ObjectId(),
+    name: "Museum of chivalry",
+    nature: "place",
+    editor: {
+        _id: aaron._id,
+        email: aaron.email
+    },
+    picture: ["/images/Carcassonne/meuschiv.jpg"],
+    comments: [],
+    likers: [],
+    description: "Gilles Alessandri, a very passionate and cultivated person, will welcome you to his consistent collection of middle-aged weapons, tapestry, coins and illumination. The Museum is a complete following to the footsteps of knights, so don't be surprised if you will be dubbed. For the most temerous people, crossing the swords with the manager is even possible. But be aware, he is a real professionnal.",
+    url: "https://www.inspirock.com/france/carcassonne-center/maison-de-la-chevalerie-la-cite-a725440545",
+    dateStart: new Date('2018-7-15'),
+    dateEnd: new Date('2018-8-31')
+};
+var museum_of_inquisition = {
+    _id: ObjectId(),
+    name: "Museum of inquisition",
+    nature: "place",
+    editor: {
+        _id: aaron._id,
+        email: aaron.email
+    },
+    picture: ["/images/Carcassonne/meusinq.jpg"],
+    comments: [],
+    likers: [],
+    description: "Gilles Alessandri, a very passionate and cultivated person, will welcome you to his consistent collection of middle-aged weapons, tapestry, coins and illumination. The Museum is a complete following to the footsteps of knights, so don't be surprised if you will be dubbed. For the most temerous people, crossing the swords with the manager is even possible. But be aware, he is a real professionnal. The Museum hosts plenty of torture instruments and installations too, dated from the XIIth century to the French Revolution.",
+    url: "http://www.musee-inquisition-carcassonne.com/",
+    dateStart: new Date('2018-7-15'),
+    dateEnd: new Date('2018-8-31')
+};
+var proposal_stones = {
+    _id: ObjectId(),
+    name: "Proposal stones",
+    nature: "place",
+    editor: {
+        _id: aaron._id,
+        email: aaron.email
+    },
+    picture: ["/images/Carlingford/proposal-stones.jpg"],
+    comments: [],
+    likers: [],
+    description: "Across from the sea, you could walk down Proposal Stones for a romantic atmosphere.  Indeed this place has always been where couples stopped at and made their proposal, so that they would have good luck thanks to the fairies. Even the Church could not have stopped this paian tradition whereas it dismantled a huge part of it and hid it as well in the 18th century.",
+    url: "https://www.irelandsancienteast.com/discover/stories/short-stories/proposal-stones",
+    dateStart: new Date('2018-7-15'),
+    dateEnd: new Date('2018-8-31')
+};
+var Leprechaun_and_Fairy_Underground_Cavern = {
+    _id: ObjectId(),
+    name: "Leprechaun and Fairy Underground Cavern",
+    nature: "place",
+    editor: {
+        _id: aaron._id,
+        email: aaron.email
+    },
+    picture: ["/images/Carlingford/cavern-small.jpg"],
+    comments: [],
+    likers: [],
+    description: "Across from the sea, you could walk down Proposal Stones for a romantic atmosphere.  Indeed this place has always been where couples stopped at and made their proposal, so that they would have good luck thanks to the fairies. Even the Church could not have stopped this paian tradition whereas it dismantled a huge part of it and hid it as well in the 18th century.",
+    url: "http://www.thelastleprechaunsofireland.com/",
+    dateStart: new Date('2018-7-15'),
+    dateEnd: new Date('2018-8-31')
+};
+var Fire_breathing_Monument_of_the_Wawel_dragon = {
+    _id: ObjectId(),
+    name: "Fire breathing Monument of the Wawel dragon",
+    nature: "place",
+    editor: {
+        _id: aaron._id,
+        email: aaron.email
+    },
+    picture: ["/images/krakow/dragon.jpg"],
+    comments: [],
+    likers: [],
+    description: "Once upon a time in Poland near the Wawel Hill appeared a terrible dragon. People were trebling with fear when they heard him roar. There was no weapon that could at least harm the dragon, so there became less and less of knights that tried to conquer the beast. Time passed the dragon laid waste to the grounds of Krakow, until there appeared a shoemaker that asked a king to give him lambskin, some Sulphur and mustard seed. He took the lambskin, filled it with Sulphur, pitch and mustard seed, and skillfully sewed up the hole in lambs belly. The next morning he went to the place where the dragon lived and left his sheep near that place and quickly hid in the bushes. The dragon woke up and ate a sheep and his mouth became so hot that he started drinking a lot, and exploded of the amount of water he had drank.",
+    url: "https://www.thevintagenews.com/2016/09/29/wawel-dragon-statue-krakow-breathes-actual-fire-demand-text-message-received/",
+    dateStart: new Date('2018-7-15'),
+    dateEnd: new Date('2018-8-31')
+};
 db.activities.drop();
-db.activities.insert([granet, saintSauveur, festival, king_johns_castle, taaffes_castle, proleek_dolmen, oyster_festival, wawel_castle, st_marys_basilica, pierogi_festival, festival_of_music, fortress_of_carcassonne, festival_de_carcassonne]);
+db.activities.insert([granet, saintSauveur, festival, king_johns_castle, taaffes_castle, proleek_dolmen, oyster_festival, wawel_castle, st_marys_basilica, pierogi_festival, festival_of_music, fortress_of_carcassonne, festival_de_carcassonne,museum_of_chivalry,museum_of_inquisition,proposal_stones,Leprechaun_and_Fairy_Underground_Cavern,Fire_breathing_Monument_of_the_Wawel_dragon]);
 
 
 // **** cities
@@ -297,17 +377,20 @@ var aix = {
         _id: granet._id,
         name: granet.name,
         nature: granet.nature,
-        picture: granet.picture[0]
+        picture: granet.picture[0],
+        description: granet.description
     }, {
         _id: saintSauveur._id,
         name: saintSauveur.name,
         nature: saintSauveur.nature,
-        picture: saintSauveur.picture[0]
+        picture: saintSauveur.picture[0],
+        description: saintSauveur.description
     }, {
         _id: festival._id,
         name: festival.name,
         nature: festival.nature,
-        picture: festival.picture[0]
+        picture: festival.picture[0],
+        description: saintSauveur.description
     }]
 };
 
@@ -330,31 +413,49 @@ var carlingford = {
         long: "54.0469",
         lat: "6.1902"
     },
-    description: "Carlingford is a coastal town and civil parish in northern County Louth, Ireland. It is situated on the southern shore of Carlingford Lough with Slieve Foy as a backdrop, sometimes known as Carlingford Mountain, It is the main town on the Cooley Peninsula. Located on the R176/R173 roads between Greenore and Omeath village, Carlingford is approximately 27 km north east (by road) from Dundalk (15.6 km directly), 90 km north of Dublin and 11 km south of the border with Northern Ireland. Carlingford won the Irish Tidy Towns Competition in 1988. Carlingford still retains its medieval layout noticeable by the narrow lanes and small streets. Tholsel Street is where the last of the medieval walled towns gates can still be seen, called The Tholsel which apparently was also used as a gaol, on Tholsel Street itself there is still a 16th-century Town House known as the Mint.",
+    description: "Carlingford is probably the most typical irish land. Full of castles and leprauchaun, walking there will lead you to colorful streets and a beautiful bay. The harbour host the King John's Castle, a massive medieval construction that represents perfectly anglo-saxon style. The city has many lovely pathes, so you could explore it and perhaps even find some of the last leprauchauns of the country.",
     picture: "/images/Carlingford/carlingford.jpg",
     activities: [{
         _id: king_johns_castle._id,
         name: king_johns_castle.name,
         nature: king_johns_castle.nature,
-        picture: king_johns_castle.picture[0]
+        picture: king_johns_castle.picture[0],
+        description: king_johns_castle.description
     }, {
         _id: taaffes_castle._id,
         name: taaffes_castle.name,
         nature: taaffes_castle.nature,
-        picture: taaffes_castle.picture[0]
+        picture: taaffes_castle.picture[0],
+        description: taaffes_castle.description
     }, {
         _id: proleek_dolmen._id,
         name: proleek_dolmen.name,
         nature: proleek_dolmen.nature,
-        picture: proleek_dolmen.picture[0]
+        picture: proleek_dolmen.picture[0],
+        description: proleek_dolmen.description
     }, {
         _id: oyster_festival._id,
         name: oyster_festival.name,
         nature: oyster_festival.nature,
         picture: oyster_festival.picture[0],
         dateStart: oyster_festival.dateStart,
-        dateEnd: oyster_festival.dateEnd
-    }]
+        dateEnd: oyster_festival.dateEnd,
+        description: oyster_festival.description
+       
+    }, {
+        _id: proposal_stones._id,
+        name: proposal_stones.name,
+        nature: proposal_stones.nature,
+        picture: proposal_stones.picture[0],
+        description: proposal_stones.description
+    }, {
+        _id: Leprechaun_and_Fairy_Underground_Cavern._id,
+        name: Leprechaun_and_Fairy_Underground_Cavern.name,
+        nature: Leprechaun_and_Fairy_Underground_Cavern.nature,
+        picture: Leprechaun_and_Fairy_Underground_Cavern.picture[0],
+        description: Leprechaun_and_Fairy_Underground_Cavern.description
+    }
+]
 };
 
 var krakow = {
@@ -364,39 +465,46 @@ var krakow = {
         long: "50.0647",
         lat: "19.9450"
     },
-    description: "Krakow is a large, beautiful city in Poland that was " +
-     "founded during the 7th century. It is situated on the banks of Vistula River " +
-     "and is one of the oldest cities in Poland. After the German invasion " +
-     " at the start of World War II, it became the capital of the German " +
-     "General Government. After WWII, Krakow was returned to Poland and " +
-     "became the native city of first Slavic Pope ever. He was the first non " +
-     "Italian born Pope in 455 years. In 1978 UNESCO included the entire Old " +
-     "Town to the World Heritage List.",
+    description: "Krakow is a beautiful big city in Poland that was found in 7th century. It is situated on the banks of Vistula river. It is one of the oldest cities in Poland. After German invasion at the beginning of the word war II it became the capital of Germanys General Government. After the world war II Krakow was returned to Poland and became the native city of first Slavic pope ever, and first pope not from Italy in 455 years. In 1978 UNESCO included the entire Old Town to the World Heritage List.",
     picture: "/images/Krakow/krakow_01.jpg",
     activities: [{
         _id: wawel_castle._id,
         name: wawel_castle.name,
         nature: wawel_castle.nature,
-        picture: wawel_castle.picture
+        picture: wawel_castle.picture,
+        description: wawel_castle.description
     },{
         _id: st_marys_basilica._id,
         name: st_marys_basilica.name,
         nature: st_marys_basilica.nature,
         picture: st_marys_basilica.picture,
+        description: st_marys_basilica.description
     },{
         _id: pierogi_festival._id,
         name: pierogi_festival.name,
         nature: pierogi_festival.nature,
         picture: pierogi_festival.picture,
         dateStart: pierogi_festival.dateStart,
-        dateEnd: pierogi_festival.dateEnd
-    },{
+        dateEnd: pierogi_festival.dateEnd,
+        description: pierogi_festival.description
+    },
+    {
+        _id: Fire_breathing_Monument_of_the_Wawel_dragon._id,
+        name: Fire_breathing_Monument_of_the_Wawel_dragon.name,
+        nature: Fire_breathing_Monument_of_the_Wawel_dragon.nature,
+        picture: Fire_breathing_Monument_of_the_Wawel_dragon.picture,
+        dateStart: Fire_breathing_Monument_of_the_Wawel_dragon.dateStart,
+        dateEnd: Fire_breathing_Monument_of_the_Wawel_dragon.dateEnd,
+        description: Fire_breathing_Monument_of_the_Wawel_dragon.description
+    },
+    {
         _id: festival_of_music._id,
         name: festival_of_music.name,
         nature: festival_of_music.nature,
         picture: festival_of_music.picture,
         dateStart: festival_of_music.dateStart,
-        dateEnd: festival_of_music.dateEnd
+        dateEnd: festival_of_music.dateEnd,
+        description: festival_of_music.description
     }]
 };
 
@@ -407,22 +515,43 @@ var carcassonne = {
         long: "43.2122",
         lat: "2.3537"
     },
-    description: "Carcassonne is a fortified town in France. The castle itself is inhabited since Neolithic period. Carcassonne is located between historic trade routes that link the Atlantic to Mediterranean sea, that is why it was very strategically important that is why it was always occupied by different medieval nations. The city Carcassonne is famous for the medieval fortress that was restored in 1853 and added to the UNESCO list of World Heritage Sites in 1997.",
+    description: "Carcassonne is a fortified town in France. The castle itself is inhabited since Neolithic period. Carcassonne is located between historic trade routes that link the Atlantic to Mediterranean sea, that is why it was very strategically important so that many medieval nations would fight for it. The city Carcassonne is famous for the medieval fortress that was restored in 1853 and added to the UNESCO list of World Heritage Sites in 1997.",
     picture: "/images/Carcassonne/carcassonne_01.jpg",
     activities: [{
         _id: fortress_of_carcassonne._id,
         name: fortress_of_carcassonne.name,
         nature: fortress_of_carcassonne.nature,
-        picture: fortress_of_carcassonne.picture
+        picture: fortress_of_carcassonne.picture,
+        description: fortress_of_carcassonne.description
     },{
         _id: festival_de_carcassonne._id,
         name: festival_de_carcassonne.name,
         nature: festival_de_carcassonne.nature,
         picture: festival_de_carcassonne.picture,
         dateStart: festival_de_carcassonne.dateStart,
-        dateEnd: festival_de_carcassonne.dateEnd
-    }]
-}
+        dateEnd: festival_de_carcassonne.dateEnd,
+        description: fortress_of_carcassonne.description
+    },
+    {
+        _id: museum_of_chivalry._id,
+        name: museum_of_chivalry.name,
+        nature: museum_of_chivalry.nature,
+        picture: museum_of_chivalry.picture,
+        dateStart: museum_of_chivalry.dateStart,
+        dateEnd: festival_de_carcassonne.dateEnd,
+        description: museum_of_chivalry.description
+    },
+    {
+        _id: museum_of_inquisition._id,
+        name: museum_of_inquisition.name,
+        nature: museum_of_inquisition.nature,
+        picture: museum_of_inquisition.picture,
+        dateStart: museum_of_inquisition.dateStart,
+        dateEnd: museum_of_inquisition.dateEnd,
+        description: museum_of_inquisition.description
+    }
+]
+};
 
 db.cities.drop();
 db.cities.insert([carlingford, krakow, carcassonne, aix]);

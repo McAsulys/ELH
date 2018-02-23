@@ -20,8 +20,8 @@ class DisplayImage extends React.Component {
 class Comment extends React.Component {
     render () {
         return (
-            <div>
-                <p>{this.props.comment.user.email}</p>
+            <div >
+                <p>{(this.props.comment.user || {}).email}</p>
                 <p>{this.props.comment.text}</p>
                 <br />
             </div>
@@ -40,7 +40,7 @@ export default class Activity extends React.Component {
         fetch('/activity/' + this.props.params.id)
             .then(res => res.json())
             .then(data => this.setState({activity: data}))
-            .catch(err => console.log(err)); 
+            .catch(err => console.log(err));
     }
     
     addComment(e) {
@@ -69,6 +69,7 @@ export default class Activity extends React.Component {
     }
 
     render() {
+
         if (this.state.activity === null)
             return <p>Loading Activity</p>
         
@@ -76,21 +77,66 @@ export default class Activity extends React.Component {
         let x = this.state.activity.comments.map(c => <Comment comment={c}/>);
         console.log("X: ", x);
         
+       
+      const style = {
+        backgroundImage: "url("+this.state.activity.picture+")"
+      }
         return (
             <div>
-                <h1>Place: {this.state.activity.name}</h1>
-                <img width="400" height="400" src={this.state.activity.picture} />
-                <p>{this.state.activity.description}</p>
-                <p>Website: </p><a href={this.state.activity.url}>{this.state.activity.url}</a>
-                
+              <header>
+              <img className="logo" src="images/logo.png" />
+              <div className="container flex">
+                <div className="menu">
+                    <a href="/">Home</a>
+                    <a href="/country">Countries</a>
+                    <a href="/contact">Countries</a>
+                </div>
+                <div className="leftside">
+                    <div className="Login">
+                        <h3>McAsulys</h3>
+                        <a className="button" href="/*lougout link*/">Log out</a>
+                    </div>
+                    <div className="SearchBar">
+                        <form action="" method="GET">
+                            <input className="search" type="text" name="search"></input>
+                            <input className="loupe" type="submit"></input>
+                        </form>
+                    </div>
+                </div>
+              </div>
+          </header>
+              <div className="city_front" style={style}>
+                <div>
+                  <div className="city_desc">
+                    <h1>{this.state.activity.name}</h1>
+                    <p>{this.state.activity.description}</p>
+                    <a href={this.state.activity.url}>{this.state.activity.url}</a>
+                  </div>
+                </div>
                 <h2>Add a comment</h2>
                 <form onSubmit={(e) => this.addComment(e)}>
                     <textarea cols="50" rows="10" value={this.state.comment} onChange={(e) => {this.handleCommentChange(e)}}></textarea><br />
                     <input type="submit" value="Add" />
                 </form>
                 
-                {this.state.activity.comments.map(c => <Comment comment={c}/>)}
-            </div>
+                
+              </div>
+              {this.state.activity.comments.map(c => <Comment comment={c}/>)}
+              <footer>
+                  <div className="footer_link">
+                    <a href="/cgu">Terms and conditions</a>
+                    <a href="/map">Site map</a>
+                    <a href="/contact">Contact us</a>
+                  </div>
+
+                  <div className="socials">
+                    <a href="/facebook"><img className="social" src="images/icons/fb.png" /></a>
+                    <a href="/Twitter"><img className="social" src="images/icons/twitter-icon.png" /></a>
+                    <a href="/Insta"><img className="social" src="images/icons/insta.png" /></a>
+                  </div>
+                </footer>
+                </div>
+
         );
-    }
-}
+    };
+};

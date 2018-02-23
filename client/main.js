@@ -7,6 +7,8 @@ import Home from './Home.js';
 import City from "./City.js";
 import NewCity from "./NewCities.js";
 import Activity from './Activity.js';
+
+
 ReactDOM.render(
     <div>
       <body>
